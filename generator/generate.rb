@@ -23,6 +23,7 @@ class Generator
     @fix50 = FIXDictionary.load spec('FIX50')
     @fix50sp1 = FIXDictionary.load spec('FIX50SP1')
     @fix50sp2 = FIXDictionary.load spec('FIX50SP2')
+    @fix50sp2artex = FIXDictionary.load spec('FIX50SP2artex')
     @fixt11 = FIXDictionary.load spec('FIXT11')
     @src_path = File.join File.dirname(__FILE__), '..', 'QuickFIXn'
     @src_messages_path = File.join File.dirname(__FILE__), '..'
@@ -39,10 +40,14 @@ class Generator
   end
 
   def agg_fields
-    field_names = (@fix40.fields.keys + @fix41.fields.keys +
+    field_names = (
+        @fix40.fields.keys + @fix41.fields.keys +
         @fix42.fields.keys + @fix43.fields.keys +
         @fix44.fields.keys + @fix50.fields.keys +
-        @fix50sp1.fields.keys + @fix50sp2.fields.keys + @fixt11.fields.keys).uniq
+        @fix50sp1.fields.keys +
+        @fix50sp2.fields.keys +
+        @fix50sp2artex.fields.keys +
+        @fixt11.fields.keys).uniq
     field_names.map {|fn| get_field_def(fn) }
   end
 
@@ -50,6 +55,7 @@ class Generator
     # we give priority to latest fix version
     fld = merge_field_defs(
       @fixt11.fields[fld_name],
+      @fix50sp2artex.fields[fld_name],
       @fix50sp2.fields[fld_name],
       @fix50sp1.fields[fld_name],
       @fix50.fields[fld_name],
@@ -86,6 +92,7 @@ class Generator
     MessageGen.generate(@fix50.messages,  msgs_path, 'FIX50')
     MessageGen.generate(@fix50sp1.messages,  msgs_path, 'FIX50SP1')
     MessageGen.generate(@fix50sp2.messages,  msgs_path, 'FIX50SP2')
+    MessageGen.generate(@fix50sp2artex.messages,  msgs_path, 'FIX50SP2artex')
     MessageGen.generate(@fixt11.messages,  msgs_path, 'FIXT11')
   end
 
@@ -99,6 +106,7 @@ class Generator
     MessageFactoryGen.generate(@fix50.messages,  msgs_path, 'FIX50')
     MessageFactoryGen.generate(@fix50sp1.messages,  msgs_path, 'FIX50SP1')
     MessageFactoryGen.generate(@fix50sp2.messages,  msgs_path, 'FIX50SP2')
+    MessageFactoryGen.generate(@fix50sp2artex.messages,  msgs_path, 'FIX50SP2artex')
     MessageFactoryGen.generate(@fixt11.messages,  msgs_path, 'FIXT11')
   end
 end

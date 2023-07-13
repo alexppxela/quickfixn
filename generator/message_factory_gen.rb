@@ -5,6 +5,9 @@ class MessageFactoryGen
     file_path = File.join(destdir,"MessageFactory.cs")
     puts 'generate ' + file_path
 
+    if fixver == "FIX50SP2artex" then
+      fixver = "FIX50SP2"
+    end
     content = gen_factory(messages,fixver)
     File.open(file_path, 'w') {|f| f.puts(content)}
   end

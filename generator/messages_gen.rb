@@ -5,6 +5,10 @@ class MessageGen
     destdir = File.join(dir, fixver)
     Dir.mkdir(destdir) unless File.exists? destdir
 
+    if fixver == "FIX50SP2artex" then
+      fixver = "FIX50SP2"
+    end
+    
     basemsgstr = gen_basemsg(fixver,destdir)
     basemsg_path = File.join(destdir, "Message.cs")
     puts "generate #{basemsg_path}"

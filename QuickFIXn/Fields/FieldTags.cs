@@ -1657,5 +1657,11 @@ namespace QuickFix.Fields
         public const int RelationshipRiskEncodedSecurityDesc = 1619;
         public const int RiskEncodedSecurityDescLen = 1620;
         public const int RiskEncodedSecurityDesc = 1621;
+        public const int OrderOrigination = 1724;
+        public const int BidMDEntryID = 1745;
+        public const int OfferMDEntryID = 1746;
+        public const int BidQuoteID = 1747;
+        public const int OfferQuoteID = 1748;
+        public const int PartyRoleQualifier = 2376;
     }
 }

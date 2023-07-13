@@ -664,59 +664,109 @@ namespace QuickFix.Fields
 
         // Field Enumerations
         public const string HEARTBEAT = "0";
-        public const string TESTREQUEST = "1";
-        public const string RESENDREQUEST = "2";
+        public const string TEST_REQUEST = "1";
+        public const string RESEND_REQUEST = "2";
         public const string REJECT = "3";
-        public const string SEQUENCERESET = "4";
+        public const string SEQUENCE_RESET = "4";
         public const string LOGOUT = "5";
-        public const string IOI = "6";
+        public const string INDICATION_OF_INTEREST = "6";
         public const string ADVERTISEMENT = "7";
-        public const string EXECUTIONREPORT = "8";
-        public const string ORDERCANCELREJECT = "9";
+        public const string EXECUTION_REPORT = "8";
+        public const string ORDER_CANCEL_REJECT = "9";
         public const string LOGON = "A";
-        public const string DERIVATIVESECURITYLIST = "AA";
-        public const string NEWORDERMULTILEG = "AB";
-        public const string MULTILEGORDERCANCELREPLACE = "AC";
-        public const string TRADECAPTUREREPORTREQUEST = "AD";
-        public const string TRADECAPTUREREPORT = "AE";
-        public const string ORDERMASSSTATUSREQUEST = "AF";
-        public const string QUOTEREQUESTREJECT = "AG";
-        public const string RFQREQUEST = "AH";
-        public const string QUOTESTATUSREPORT = "AI";
-        public const string QUOTERESPONSE = "AJ";
-        public const string CONFIRMATION = "AK";
-        public const string POSITIONMAINTENANCEREQUEST = "AL";
-        public const string POSITIONMAINTENANCEREPORT = "AM";
-        public const string REQUESTFORPOSITIONS = "AN";
-        public const string REQUESTFORPOSITIONSACK = "AO";
-        public const string POSITIONREPORT = "AP";
-        public const string TRADECAPTUREREPORTREQUESTACK = "AQ";
-        public const string TRADECAPTUREREPORTACK = "AR";
-        public const string ALLOCATIONREPORT = "AS";
-        public const string ALLOCATIONREPORTACK = "AT";
-        public const string CONFIRMATION_ACK = "AU";
-        public const string SETTLEMENTINSTRUCTIONREQUEST = "AV";
-        public const string ASSIGNMENTREPORT = "AW";
-        public const string COLLATERALREQUEST = "AX";
-        public const string COLLATERALASSIGNMENT = "AY";
-        public const string COLLATERALRESPONSE = "AZ";
         public const string NEWS = "B";
-        public const string COLLATERALREPORT = "BA";
-        public const string COLLATERALINQUIRY = "BB";
-        public const string NETWORKCOUNTERPARTYSYSTEMSTATUSREQUEST = "BC";
-        public const string NETWORKCOUNTERPARTYSYSTEMSTATUSRESPONSE = "BD";
-        public const string USERREQUEST = "BE";
-        public const string USERRESPONSE = "BF";
-        public const string COLLATERALINQUIRYACK = "BG";
-        public const string CONFIRMATIONREQUEST = "BH";
-        public const string TRADINGSESSIONLISTREQUEST = "BI";
+        public const string EMAIL = "C";
+        public const string ORDER_SINGLE = "D";
+        public const string ORDER_LIST = "E";
+        public const string ORDER_CANCEL_REQUEST = "F";
+        public const string ORDER_CANCEL_REPLACE_REQUEST = "G";
+        public const string ORDER_STATUS_REQUEST = "H";
+        public const string ALLOCATION_INSTRUCTION = "J";
+        public const string LIST_CANCEL_REQUEST = "K";
+        public const string LIST_EXECUTE = "L";
+        public const string LIST_STATUS_REQUEST = "M";
+        public const string LIST_STATUS = "N";
+        public const string ALLOCATION_INSTRUCTION_ACK = "P";
+        public const string DONT_KNOW_TRADE = "Q";
+        public const string QUOTE_REQUEST = "R";
+        public const string QUOTE = "S";
+        public const string SETTLEMENT_INSTRUCTIONS = "T";
+        public const string MARKET_DATA_REQUEST = "V";
+        public const string MARKET_DATA_SNAPSHOT_FULL_REFRESH = "W";
+        public const string MARKET_DATA_INCREMENTAL_REFRESH = "X";
+        public const string MARKET_DATA_REQUEST_REJECT = "Y";
+        public const string QUOTE_CANCEL = "Z";
+        public const string QUOTE_STATUS_REQUEST = "a";
+        public const string MASS_QUOTE_ACKNOWLEDGEMENT = "b";
+        public const string SECURITY_DEFINITION_REQUEST = "c";
+        public const string SECURITY_DEFINITION = "d";
+        public const string SECURITY_STATUS_REQUEST = "e";
+        public const string SECURITY_STATUS = "f";
+        public const string TRADING_SESSION_STATUS_REQUEST = "g";
+        public const string TRADING_SESSION_STATUS = "h";
+        public const string MASS_QUOTE = "i";
+        public const string BUSINESS_MESSAGE_REJECT = "j";
+        public const string BID_REQUEST = "k";
+        public const string BID_RESPONSE = "l";
+        public const string LIST_STRIKE_PRICE = "m";
+        public const string XML_MESSAGE = "n";
+        public const string REGISTRATION_INSTRUCTIONS = "o";
+        public const string REGISTRATION_INSTRUCTIONS_RESPONSE = "p";
+        public const string ORDER_MASS_CANCEL_REQUEST = "q";
+        public const string ORDER_MASS_CANCEL_REPORT = "r";
+        public const string NEW_ORDER_CROSS = "s";
+        public const string CROSS_ORDER_CANCEL_REPLACE_REQUEST = "t";
+        public const string CROSS_ORDER_CANCEL_REQUEST = "u";
+        public const string SECURITY_TYPE_REQUEST = "v";
+        public const string SECURITY_TYPES = "w";
+        public const string SECURITY_LIST_REQUEST = "x";
+        public const string SECURITY_LIST = "y";
+        public const string DERIVATIVE_SECURITY_LIST_REQUEST = "z";
+        public const string DERIVATIVE_SECURITY_LIST = "AA";
+        public const string NEW_ORDER_MULTILEG = "AB";
+        public const string MULTILEG_ORDER_CANCEL_REPLACE = "AC";
+        public const string TRADE_CAPTURE_REPORT_REQUEST = "AD";
+        public const string TRADE_CAPTURE_REPORT = "AE";
+        public const string ORDER_MASS_STATUS_REQUEST = "AF";
+        public const string QUOTE_REQUEST_REJECT = "AG";
+        public const string RFQ_REQUEST = "AH";
+        public const string QUOTE_STATUS_REPORT = "AI";
+        public const string QUOTE_RESPONSE = "AJ";
+        public const string CONFIRMATION = "AK";
+        public const string POSITION_MAINTENANCE_REQUEST = "AL";
+        public const string POSITION_MAINTENANCE_REPORT = "AM";
+        public const string REQUEST_FOR_POSITIONS = "AN";
+        public const string REQUEST_FOR_POSITIONS_ACK = "AO";
+        public const string POSITION_REPORT = "AP";
+        public const string TRADE_CAPTURE_REPORT_REQUEST_ACK = "AQ";
+        public const string TRADE_CAPTURE_REPORT_ACK = "AR";
+        public const string ALLOCATION_REPORT = "AS";
+        public const string ALLOCATION_REPORT_ACK = "AT";
+        public const string CONFIRMATION_ACK = "AU";
+        public const string SETTLEMENT_INSTRUCTION_REQUEST = "AV";
+        public const string ASSIGNMENT_REPORT = "AW";
+        public const string COLLATERAL_REQUEST = "AX";
+        public const string COLLATERAL_ASSIGNMENT = "AY";
+        public const string COLLATERAL_RESPONSE = "AZ";
+        public const string COLLATERAL_REPORT = "BA";
+        public const string COLLATERAL_INQUIRY = "BB";
+        public const string NETWORK_STATUS_REQUEST = "BC";
+        public const string NETWORK_STATUS_RESPONSE = "BD";
+        public const string USER_REQUEST = "BE";
+        public const string USER_RESPONSE = "BF";
+        public const string COLLATERAL_INQUIRY_ACK = "BG";
+        public const string CONFIRMATION_REQUEST = "BH";
+        public const string TRADING_SESSION_LIST_REQUEST = "BI";
+        public const string TRADING_SESSION_LIST = "BJ";
+        public const string SECURITY_LIST_UPDATE_REPORT = "BK";
+        public const string ADJUSTED_POSITION_REPORT = "BL";
+        public const string ALLOCATION_INSTRUCTION_ALERT = "BM";
+        public const string EXECUTION_ACKNOWLEDGEMENT = "BN";
+        public const string CONTRARY_INTENTION_REPORT = "BO";
+        public const string SECURITY_DEFINITION_UPDATE_REPORT = "BP";
+        public const string ORDERCANCELREJECT = "9";
         public const string TRADINGSESSIONLIST = "BJ";
-        public const string SECURITYLISTUPDATEREPORT = "BK";
-        public const string ADJUSTEDPOSITIONREPORT = "BL";
-        public const string ALLOCATIONINSTRUCTIONALERT = "BM";
-        public const string EXECUTIONACKNOWLEDGEMENT = "BN";
-        public const string CONTRARYINTENTIONREPORT = "BO";
-        public const string SECURITYDEFINITIONUPDATEREPORT = "BP";
+        public const string TRADINGSESSIONLISTREQUEST = "BI";
         public const string SETTLEMENTOBLIGATIONREPORT = "BQ";
         public const string DERIVATIVESECURITYLISTUPDATEREPORT = "BR";
         public const string TRADINGSESSIONLISTUPDATEREPORT = "BS";
@@ -727,7 +777,6 @@ namespace QuickFix.Fields
         public const string APPLICATIONMESSAGEREQUESTACK = "BX";
         public const string APPLICATIONMESSAGEREPORT = "BY";
         public const string ORDERMASSACTIONREPORT = "BZ";
-        public const string EMAIL = "C";
         public const string ORDERMASSACTIONREQUEST = "CA";
         public const string USERNOTIFICATION = "CB";
         public const string STREAMASSIGNMENTREQUEST = "CC";
@@ -735,28 +784,75 @@ namespace QuickFix.Fields
         public const string STREAMASSIGNMENTREPORTACK = "CE";
         public const string PARTYDETAILSLISTREQUEST = "CF";
         public const string PARTYDETAILSLISTREPORT = "CG";
+        public const string MARGINREQUIREMENTINQUIRY = "CH";
+        public const string MARGINREQUIREMENTINQUIRYACK = "CI";
+        public const string MARGINREQUIREMENTREPORT = "CJ";
+        public const string PARTYDETAILSLISTUPDATEREPORT = "CK";
+        public const string PARTYRISKLIMITSREQUEST = "CL";
+        public const string PARTYRISKLIMITSREPORT = "CM";
+        public const string SECURITYMASSSTATUSREQUEST = "CN";
+        public const string SECURITYMASSSTATUS = "CO";
+        public const string ACCOUNTSUMMARYREPORT = "CQ";
+        public const string PARTYRISKLIMITSUPDATEREPORT = "CR";
+        public const string PARTYRISKLIMITSDEFINITIONREQUEST = "CS";
+        public const string PARTYRISKLIMITSDEFINITIONREQUESTACK = "CT";
+        public const string PARTYENTITLEMENTSREQUEST = "CU";
+        public const string PARTYENTITLEMENTSREPORT = "CV";
+        public const string QUOTEACK = "CW";
+        public const string PARTYDETAILSDEFINITIONREQUEST = "CX";
+        public const string PARTYDETAILSDEFINITIONREQUESTACK = "CY";
+        public const string PARTYENTITLEMENTSUPDATEREPORT = "CZ";
+        public const string PARTYENTITLEMENTSDEFINITIONREQUEST = "DA";
+        public const string PARTYENTITLEMENTSDEFINITIONREQUESTACK = "DB";
+        public const string TRADEMATCHREPORT = "DC";
         public const string NEWORDERSINGLE = "D";
+        public const string TRADEMATCHREPORTACK = "DD";
+        public const string PARTYRISKLIMITSREPORTACK = "DE";
+        public const string PARTYRISKLIMITCHECKREQUEST = "DF";
+        public const string PARTYRISKLIMITCHECKREQUESTACK = "DG";
+        public const string PARTYACTIONREQUEST = "DH";
+        public const string PARTYACTIONREPORT = "DI";
+        public const string MASSORDER = "DJ";
+        public const string MASSORDERACK = "DK";
+        public const string POSITIONTRANSFERINSTRUCTION = "DL";
+        public const string POSITIONTRANSFERINSTRUCTIONACK = "DM";
         public const string NEWORDERLIST = "E";
+        public const string POSITIONTRANSFERREPORT = "DN";
+        public const string MARKETDATASTATISTICSREQUEST = "DO";
+        public const string MARKETDATASTATISTICSREPORT = "DP";
+        public const string COLLATERALREPORTACK = "DQ";
+        public const string MARKETDATAREPORT = "DR";
+        public const string CROSSREQUEST = "DS";
+        public const string CROSSREQUESTACK = "DT";
+        public const string ALLOCATIONINSTRUCTIONALERTREQUEST = "DU";
+        public const string ALLOCATIONINSTRUCTIONALERTREQUESTACK = "DV";
+        public const string TRADEAGGREGATIONREQUEST = "DW";
         public const string ORDERCANCELREQUEST = "F";
+        public const string TRADEAGGREGATIONREPORT = "DX";
+        public const string PAYMANAGEMENTREPORT = "EA";
+        public const string PAYMANAGEMENTREPORTACK = "EB";
+        public const string PAYMANAGEMENTREQUEST = "DY";
+        public const string PAYMANAGEMENTREQUESTACK = "DZ";
         public const string ORDERCANCELREPLACEREQUEST = "G";
         public const string ORDERSTATUSREQUEST = "H";
         public const string ALLOCATIONINSTRUCTION = "J";
+        public const string TESTREQUEST = "1";
         public const string LISTCANCELREQUEST = "K";
         public const string LISTEXECUTE = "L";
         public const string LISTSTATUSREQUEST = "M";
         public const string LISTSTATUS = "N";
         public const string ALLOCATIONINSTRUCTIONACK = "P";
-        public const string DONTKNOWTRADEDK = "Q";
+        public const string DONTKNOWTRADE = "Q";
         public const string QUOTEREQUEST = "R";
-        public const string QUOTE = "S";
         public const string SETTLEMENTINSTRUCTIONS = "T";
         public const string MARKETDATAREQUEST = "V";
+        public const string RESENDREQUEST = "2";
         public const string MARKETDATASNAPSHOTFULLREFRESH = "W";
         public const string MARKETDATAINCREMENTALREFRESH = "X";
         public const string MARKETDATAREQUESTREJECT = "Y";
         public const string QUOTECANCEL = "Z";
         public const string QUOTESTATUSREQUEST = "a";
-        public const string MASSQUOTEACKNOWLEDGEMENT = "b";
+        public const string MASSQUOTEACK = "b";
         public const string SECURITYDEFINITIONREQUEST = "c";
         public const string SECURITYDEFINITION = "d";
         public const string SECURITYSTATUSREQUEST = "e";
@@ -768,9 +864,10 @@ namespace QuickFix.Fields
         public const string BIDREQUEST = "k";
         public const string BIDRESPONSE = "l";
         public const string LISTSTRIKEPRICE = "m";
-        public const string XML_NON_FIX = "n";
+        public const string XMLNONFIX = "n";
         public const string REGISTRATIONINSTRUCTIONS = "o";
         public const string REGISTRATIONINSTRUCTIONSRESPONSE = "p";
+        public const string SEQUENCERESET = "4";
         public const string ORDERMASSCANCELREQUEST = "q";
         public const string ORDERMASSCANCELREPORT = "r";
         public const string NEWORDERCROSS = "s";
@@ -781,105 +878,59 @@ namespace QuickFix.Fields
         public const string SECURITYLISTREQUEST = "x";
         public const string SECURITYLIST = "y";
         public const string DERIVATIVESECURITYLISTREQUEST = "z";
-        public const string TEST_REQUEST = "1";
-        public const string RESEND_REQUEST = "2";
-        public const string SEQUENCE_RESET = "4";
-        public const string INDICATION_OF_INTEREST = "6";
-        public const string EXECUTION_REPORT = "8";
-        public const string ORDER_CANCEL_REJECT = "9";
-        public const string QUOTE_STATUS_REQUEST = "a";
-        public const string DERIVATIVE_SECURITY_LIST = "AA";
+        public const string DERIVATIVESECURITYLIST = "AA";
+        public const string NEWORDERMULTILEG = "AB";
+        public const string MULTILEGORDERCANCELREPLACE = "AC";
+        public const string TRADECAPTUREREPORTREQUEST = "AD";
+        public const string TRADECAPTUREREPORT = "AE";
+        public const string ORDERMASSSTATUSREQUEST = "AF";
+        public const string QUOTEREQUESTREJECT = "AG";
+        public const string RFQREQUEST = "AH";
+        public const string QUOTESTATUSREPORT = "AI";
+        public const string QUOTERESPONSE = "AJ";
+        public const string IOI = "6";
+        public const string POSITIONMAINTENANCEREQUEST = "AL";
+        public const string POSITIONMAINTENANCEREPORT = "AM";
+        public const string REQUESTFORPOSITIONS = "AN";
+        public const string REQUESTFORPOSITIONSACK = "AO";
+        public const string POSITIONREPORT = "AP";
+        public const string TRADECAPTUREREPORTREQUESTACK = "AQ";
+        public const string TRADECAPTUREREPORTACK = "AR";
+        public const string ALLOCATIONREPORT = "AS";
+        public const string ALLOCATIONREPORTACK = "AT";
+        public const string CONFIRMATIONACK = "AU";
+        public const string SETTLEMENTINSTRUCTIONREQUEST = "AV";
+        public const string ASSIGNMENTREPORT = "AW";
+        public const string COLLATERALREQUEST = "AX";
+        public const string COLLATERALASSIGNMENT = "AY";
+        public const string COLLATERALRESPONSE = "AZ";
+        public const string COLLATERALREPORT = "BA";
+        public const string COLLATERALINQUIRY = "BB";
+        public const string NETWORKCOUNTERPARTYSYSTEMSTATUSREQUEST = "BC";
+        public const string NETWORKCOUNTERPARTYSYSTEMSTATUSRESPONSE = "BD";
+        public const string EXECUTIONREPORT = "8";
+        public const string USERREQUEST = "BE";
+        public const string USERRESPONSE = "BF";
+        public const string COLLATERALINQUIRYACK = "BG";
+        public const string CONFIRMATIONREQUEST = "BH";
+        public const string CONTRARYINTENTIONREPORT = "BO";
+        public const string SECURITYDEFINITIONUPDATEREPORT = "BP";
+        public const string SECURITYLISTUPDATEREPORT = "BK";
+        public const string ADJUSTEDPOSITIONREPORT = "BL";
+        public const string ALLOCATIONINSTRUCTIONALERT = "BM";
+        public const string EXECUTIONACK = "BN";
+        public const string EXECUTIONACKNOWLEDGEMENT = "BN";
+        public const string DONTKNOWTRADEDK = "Q";
+        public const string MASSQUOTEACKNOWLEDGEMENT = "b";
+        public const string XML_NON_FIX = "n";
         public const string NEW_ORDER_AB = "AB";
-        public const string MULTILEG_ORDER_CANCEL_REPLACE = "AC";
-        public const string TRADE_CAPTURE_REPORT_REQUEST = "AD";
-        public const string TRADE_CAPTURE_REPORT = "AE";
-        public const string ORDER_MASS_STATUS_REQUEST = "AF";
-        public const string QUOTE_REQUEST_REJECT = "AG";
-        public const string RFQ_REQUEST = "AH";
-        public const string QUOTE_STATUS_REPORT = "AI";
-        public const string QUOTE_RESPONSE = "AJ";
-        public const string POSITION_MAINTENANCE_REQUEST = "AL";
-        public const string POSITION_MAINTENANCE_REPORT = "AM";
-        public const string REQUEST_FOR_POSITIONS = "AN";
-        public const string REQUEST_FOR_POSITIONS_ACK = "AO";
-        public const string POSITION_REPORT = "AP";
-        public const string TRADE_CAPTURE_REPORT_REQUEST_ACK = "AQ";
-        public const string TRADE_CAPTURE_REPORT_ACK = "AR";
-        public const string ALLOCATION_REPORT = "AS";
-        public const string ALLOCATION_REPORT_ACK = "AT";
-        public const string SETTLEMENT_INSTRUCTION_REQUEST = "AV";
-        public const string ASSIGNMENT_REPORT = "AW";
-        public const string COLLATERAL_REQUEST = "AX";
-        public const string COLLATERAL_ASSIGNMENT = "AY";
-        public const string COLLATERAL_RESPONSE = "AZ";
-        public const string MASS_QUOTE_ACKNOWLEDGEMENT = "b";
-        public const string COLLATERAL_REPORT = "BA";
-        public const string COLLATERAL_INQUIRY = "BB";
         public const string NETWORK_COUNTERPARTY_SYSTEM_STATUS_REQUEST = "BC";
         public const string NETWORK_COUNTERPARTY_SYSTEM_STATUS_RESPONSE = "BD";
-        public const string USER_REQUEST = "BE";
-        public const string USER_RESPONSE = "BF";
-        public const string COLLATERAL_INQUIRY_ACK = "BG";
-        public const string CONFIRMATION_REQUEST = "BH";
-        public const string SECURITY_DEFINITION_REQUEST = "c";
-        public const string SECURITY_DEFINITION = "d";
         public const string NEW_ORDER_D = "D";
-        public const string SECURITY_STATUS_REQUEST = "e";
         public const string NEW_ORDER_E = "E";
-        public const string ORDER_CANCEL_REQUEST = "F";
-        public const string SECURITY_STATUS = "f";
-        public const string ORDER_CANCEL_REPLACE_REQUEST = "G";
-        public const string TRADING_SESSION_STATUS_REQUEST = "g";
-        public const string ORDER_STATUS_REQUEST = "H";
-        public const string TRADING_SESSION_STATUS = "h";
-        public const string MASS_QUOTE = "i";
-        public const string BUSINESS_MESSAGE_REJECT = "j";
-        public const string ALLOCATION_INSTRUCTION = "J";
-        public const string BID_REQUEST = "k";
-        public const string LIST_CANCEL_REQUEST = "K";
-        public const string BID_RESPONSE = "l";
-        public const string LIST_EXECUTE = "L";
-        public const string LIST_STRIKE_PRICE = "m";
-        public const string LIST_STATUS_REQUEST = "M";
-        public const string XML_MESSAGE = "n";
-        public const string LIST_STATUS = "N";
-        public const string REGISTRATION_INSTRUCTIONS = "o";
-        public const string REGISTRATION_INSTRUCTIONS_RESPONSE = "p";
-        public const string ALLOCATION_INSTRUCTION_ACK = "P";
-        public const string ORDER_MASS_CANCEL_REQUEST = "q";
-        public const string DONT_KNOW_TRADE = "Q";
-        public const string QUOTE_REQUEST = "R";
-        public const string ORDER_MASS_CANCEL_REPORT = "r";
         public const string NEW_ORDER_s = "s";
-        public const string SETTLEMENT_INSTRUCTIONS = "T";
-        public const string CROSS_ORDER_CANCEL_REPLACE_REQUEST = "t";
-        public const string CROSS_ORDER_CANCEL_REQUEST = "u";
-        public const string MARKET_DATA_REQUEST = "V";
-        public const string SECURITY_TYPE_REQUEST = "v";
-        public const string SECURITY_TYPES = "w";
         public const string MARKET_DATA_W = "W";
-        public const string SECURITY_LIST_REQUEST = "x";
         public const string MARKET_DATA_X = "X";
-        public const string MARKET_DATA_REQUEST_REJECT = "Y";
-        public const string SECURITY_LIST = "y";
-        public const string QUOTE_CANCEL = "Z";
-        public const string DERIVATIVE_SECURITY_LIST_REQUEST = "z";
-        public const string CONTRARY_INTENTION_REPORT = "BO";
-        public const string SECURITY_DEFINITION_UPDATE_REPORT = "BP";
-        public const string SECURITY_LIST_UPDATE_REPORT = "BK";
-        public const string ADJUSTED_POSITION_REPORT = "BL";
-        public const string ALLOCATION_INSTRUCTION_ALERT = "BM";
-        public const string EXECUTION_ACKNOWLEDGEMENT = "BN";
-        public const string TRADING_SESSION_LIST = "BJ";
-        public const string TRADING_SESSION_LIST_REQUEST = "BI";
-        public const string ORDER_SINGLE = "D";
-        public const string ORDER_LIST = "E";
-        public const string MARKET_DATA_SNAPSHOT_FULL_REFRESH = "W";
-        public const string MARKET_DATA_INCREMENTAL_REFRESH = "X";
-        public const string NEW_ORDER_CROSS = "s";
-        public const string NEW_ORDER_MULTILEG = "AB";
-        public const string NETWORK_STATUS_REQUEST = "BC";
-        public const string NETWORK_STATUS_RESPONSE = "BD";
         public const string ORDER_CANCEL = "G";
         public const string ALLOCATION = "J";
         public const string ALLOCATION_ACK = "P";
@@ -953,6 +1004,7 @@ namespace QuickFix.Fields
         public const char FILLED = '2';
         public const char DONE_FOR_DAY = '3';
         public const char CANCELED = '4';
+        public const char REPLACED = '5';
         public const char PENDING_CANCEL = '6';
         public const char STOPPED = '7';
         public const char REJECTED = '8';
@@ -962,7 +1014,6 @@ namespace QuickFix.Fields
         public const char EXPIRED = 'C';
         public const char ACCEPTED_FOR_BIDDING = 'D';
         public const char PENDING_REPLACE = 'E';
-        public const char REPLACED = '5';
         public const char PENDING_CANCELREPLACE = '6';
     }
 
@@ -983,7 +1034,7 @@ namespace QuickFix.Fields
         // Field Enumerations
         public const char MARKET = '1';
         public const char LIMIT = '2';
-        public const char STOP = '3';
+        public const char STOP_STOP_LOSS = '3';
         public const char STOP_LIMIT = '4';
         public const char MARKET_ON_CLOSE = '5';
         public const char WITH_OR_WITHOUT = '6';
@@ -1005,6 +1056,9 @@ namespace QuickFix.Fields
         public const char NEXT_FUND_VALUATION_POINT = 'M';
         public const char PEGGED = 'P';
         public const char COUNTER_ORDER_SELECTION = 'Q';
+        public const char STOP_ON_BID_OR_OFFER = 'R';
+        public const char STOP_LIMIT_ON_BID_OR_OFFER = 'S';
+        public const char STOP = '3';
         public const char MARKET_WITH_LEFTOVER_AS_LIMIT = 'K';
         public const char FOREX = 'C';
     }
@@ -1286,6 +1340,7 @@ namespace QuickFix.Fields
         public const char REDEEM = 'E';
         public const char LEND = 'F';
         public const char BORROW = 'G';
+        public const char SELL_UNDISCLOSED = 'H';
         public const char CROSS_SHORT_EXXMPT = 'A';
         public const char D = '7';
     }
@@ -1375,6 +1430,9 @@ namespace QuickFix.Fields
         public const char AT_THE_CLOSE = '7';
         public const char GOOD_THROUGH_CROSSING = '8';
         public const char AT_CROSSING = '9';
+        public const char GOOD_FOR_TIME = 'A';
+        public const char GOOD_FOR_AUCTION = 'B';
+        public const char GOOD_FOR_THIS_MONTH = 'C';
     }
 
 
@@ -2067,19 +2125,19 @@ namespace QuickFix.Fields
 
 
         // Field Enumerations
-        public const int NONE = 0;
-        public const int PKCS_1 = 1;
-        public const int DES = 2;
-        public const int PKCS_3 = 3;
-        public const int PGP_4 = 4;
-        public const int PGP_5 = 5;
-        public const int PEM = 6;
         public const int NONE_OTHER = 0;
         public const int PKCS = 1;
+        public const int DES = 2;
         public const int PKCS_DES = 3;
         public const int PGP_DES = 4;
         public const int PGP_DES_MD5 = 5;
         public const int PEM_DES_MD5 = 6;
+        public const int NONE = 0;
+        public const int PKCS_1 = 1;
+        public const int PKCS_3 = 3;
+        public const int PGP_4 = 4;
+        public const int PGP_5 = 5;
+        public const int PEM = 6;
         public const int PKCS_PROPRIETARY = 1;
         public const int PKCSDES = 3;
         public const int PGPDES = 4;
@@ -2143,10 +2201,10 @@ namespace QuickFix.Fields
         public const int UNABLE_TO_PROCESS_ORDER_MASS_CANCEL_REQUEST = 4;
         public const int ORIGORDMODTIME = 5;
         public const int DUPLICATE_CLORDID = 6;
-        public const int OTHER = 99;
-        public const int INVALID_PRICE_INCREMENT = 18;
         public const int PRICE_EXCEEDS_CURRENT_PRICE = 7;
         public const int PRICE_EXCEEDS_CURRENT_PRICE_BAND = 8;
+        public const int INVALID_PRICE_INCREMENT = 18;
+        public const int OTHER = 99;
         public const int BROKER_EXCHANGE_OPTION = 2;
         public const int ORIGORDMODTIME_DID_NOT_MATCH_LAST_TRANSACTTIME_OF_ORDER = 5;
         public const int DUPLICATE_CLORDID_RECEIVED = 6;
@@ -2171,12 +2229,6 @@ namespace QuickFix.Fields
         // Field Enumerations
         public const int BROKER = 0;
         public const int UNKNOWN_SYMBOL = 1;
-        public const int INVALID_INVESTOR_ID = 10;
-        public const int UNSUPPORTED_ORDER_CHARACTERISTIC = 11;
-        public const int SURVEILLENCE_OPTION = 12;
-        public const int INCORRECT_QUANTITY = 13;
-        public const int INCORRECT_ALLOCATED_QUANTITY = 14;
-        public const int UNKNOWN_ACCOUNT = 15;
         public const int EXCHANGE_CLOSED = 2;
         public const int ORDER_EXCEEDS_LIMIT = 3;
         public const int TOO_LATE_TO_ENTER = 4;
@@ -2185,9 +2237,27 @@ namespace QuickFix.Fields
         public const int DUPLICATE_OF_A_VERBALLY_COMMUNICATED_ORDER = 7;
         public const int STALE_ORDER = 8;
         public const int TRADE_ALONG_REQUIRED = 9;
-        public const int OTHER = 99;
-        public const int INVALID_PRICE_INCREMENT = 18;
+        public const int INVALID_INVESTOR_ID = 10;
+        public const int UNSUPPORTED_ORDER_CHARACTERISTIC = 11;
+        public const int SURVEILLANCE_OPTION = 12;
+        public const int INCORRECT_QUANTITY = 13;
+        public const int INCORRECT_ALLOCATED_QUANTITY = 14;
+        public const int UNKNOWN_ACCOUNT = 15;
         public const int PRICE_EXCEEDS_CURRENT_PRICE_BAND = 16;
+        public const int INVALID_PRICE_INCREMENT = 18;
+        public const int OTHER = 99;
+        public const int REFERENCE_PRICE_NOT_AVAILABLE = 19;
+        public const int NOTIONAL_VALUE_EXCEEDS_THRESHOLD = 20;
+        public const int ALGORITHM_RISK_THRESHOLD_BREACHED = 21;
+        public const int SHORT_SELL_NOT_PERMITTED = 22;
+        public const int SHORT_SELL_REJECTED_DUE_TO_SECURITY_PRE_BORROW_RESTRICTION = 23;
+        public const int SHORT_SELL_REJECTED_DUE_TO_ACCOUNT_PRE_BORROW_RESTRICTION = 24;
+        public const int INSUFFICIENT_CREDIT_LIMIT = 25;
+        public const int EXCEEDED_CLIP_SIZE_LIMIT = 26;
+        public const int EXCEEDED_MAXIMUM_NOTIONAL_ORDER_AMOUNT = 27;
+        public const int EXCEEDED_DV01_PV01_LIMIT = 28;
+        public const int EXCEEDED_CS01_LIMIT = 29;
+        public const int SURVEILLENCE_OPTION = 12;
         public const int BROKER_EXCHANGE_OPTION = 0;
         public const int BROKER_OPTION = 0;
         public const int DUPLICATE_VERBAL = 7;
@@ -3009,6 +3079,8 @@ namespace QuickFix.Fields
         public const char TRADE_IN_A_CLEARING_HOLD = 'J';
         public const char TRADE_HAS_BEEN_RELEASED_TO_CLEARING = 'K';
         public const char TRIGGERED_OR_ACTIVATED_BY_SYSTEM = 'L';
+        public const char LOCKED = 'M';
+        public const char RELEASED = 'N';
         public const char PARTIAL_FILL = '1';
         public const char FILL = '2';
         public const char REPLACE = '5';
@@ -4496,7 +4568,7 @@ namespace QuickFix.Fields
         public const char SETTLEMENT_PRICE = '6';
         public const char TRADING_SESSION_HIGH_PRICE = '7';
         public const char TRADING_SESSION_LOW_PRICE = '8';
-        public const char TRADING_SESSION_VWAP_PRICE = '9';
+        public const char VOLUME_WEIGHTED_AVERAGE_PRICE = '9';
         public const char IMBALANCE = 'A';
         public const char TRADE_VOLUME = 'B';
         public const char OPEN_INTEREST = 'C';
@@ -4519,10 +4591,21 @@ namespace QuickFix.Fields
         public const char DAILY_VALUE_ADJUSTMENT_FOR_SHORT_POSITIONS = 'U';
         public const char CUMULATIVE_VALUE_ADJUSTMENT_FOR_SHORT_POSITIONS = 'V';
         public const char RECOVERY_RATE = 'Y';
-        public const char RECOVERY_RATE_FOR_LONG = 'Z';
-        public const char RECOVERY_RATE_FOR_SHORT = 'a';
+        public const char RECOVERY_RATE_FOR_LONG_POSITIONS = 'Z';
+        public const char RECOVERY_RATE_FOR_SHORT_POSITIONS = 'a';
         public const char FIXING_PRICE = 'W';
         public const char CASH_RATE = 'X';
+        public const char MARKET_BID = 'b';
+        public const char MARKET_OFFER = 'c';
+        public const char SHORT_SALE_MINIMUM_PRICE = 'd';
+        public const char PREVIOUS_CLOSING_PRICE = 'e';
+        public const char THRESHOLD_LIMITS_AND_PRICE_BANDING = 'g';
+        public const char DAILY_FINANCING_VALUE = 'h';
+        public const char ACCRUED_FINANCING_VALUE = 'i';
+        public const char TIME_WEIGHTED_AVERAGE_PRICE = 't';
+        public const char TRADING_SESSION_VWAP_PRICE = '9';
+        public const char RECOVERY_RATE_FOR_LONG = 'Z';
+        public const char RECOVERY_RATE_FOR_SHORT = 'a';
     }
 
 
@@ -5198,10 +5281,12 @@ namespace QuickFix.Fields
         public const int CANCEL_FOR_SECURITY_TYPE = 2;
         public const int CANCEL_FOR_UNDERLYING_SECURITY = 3;
         public const int CANCEL_ALL_QUOTES = 4;
-        public const int CANCEL_QUOTE_SPECIFIED_IN_QUOTEID = 5;
-        public const int CANCEL_BY_QUOTETYPE = 6;
+        public const int CANCEL_SPECIFIED_SINGLE_QUOTE = 5;
+        public const int CANCEL_BY_TYPE_OF_QUOTE = 6;
         public const int CANCEL_FOR_SECURITY_ISSUER = 7;
         public const int CANCEL_FOR_ISSUER_OF_UNDERLYING_SECURITY = 8;
+        public const int CANCEL_QUOTE_SPECIFIED_IN_QUOTEID = 5;
+        public const int CANCEL_BY_QUOTETYPE = 6;
         public const int CANCEL_FOR_SYMBOL = 1;
         public const int CANCEL_FOR_UNDERLYING_SYMBOL = 3;
     }
@@ -5245,11 +5330,20 @@ namespace QuickFix.Fields
         public const int INVALID_BID_ASK_SPREAD = 7;
         public const int INVALID_PRICE = 8;
         public const int NOT_AUTHORIZED_TO_QUOTE_SECURITY = 9;
-        public const int OTHER = 99;
-        public const int PRICE_EXCEEDS_CURRENT_PRICE_BAND = 10;
+        public const int PRICE_EXCEEDS_CURRENT_PRICE_BAND_10 = 10;
         public const int QUOTE_LOCKED = 11;
+        public const int OTHER = 99;
         public const int INVALID_OR_UNKNOWN_SECURITY_ISSUER = 12;
         public const int INVALID_OR_UNKNOWN_ISSUER_OF_UNDERLYING_SECURITY = 13;
+        public const int NOTIONAL_VALUE_EXCEEDS_THRESHOLD = 14;
+        public const int PRICE_EXCEEDS_CURRENT_PRICE_BAND_15 = 15;
+        public const int REFERENCE_PRICE_NOT_AVAILABLE = 16;
+        public const int INSUFFICIENT_CREDIT_LIMIT = 17;
+        public const int EXCEEDED_CLIP_SIZE_LIMIT = 18;
+        public const int EXCEEDED_MAXIMUM_NOTIONAL_ORDER_AMOUNT = 19;
+        public const int EXCEEDED_DV01_PV01_LIMIT = 20;
+        public const int EXCEEDED_CS01_LIMIT = 21;
+        public const int PRICE_EXCEEDS_CURRENT_PRICE_BAND = 10;
         public const int EXCHANGE_CLOSED = 2;
         public const int DUPLICATE_QUOTE_7 = 6;
     }
@@ -6512,6 +6606,172 @@ namespace QuickFix.Fields
         public RefMsgType(string val)
             :base(Tags.RefMsgType, val) {}
 
+
+        // Field Enumerations
+        public const string HEARTBEAT = "0";
+        public const string ORDERCANCELREJECT = "9";
+        public const string TRADINGSESSIONLIST = "BJ";
+        public const string TRADINGSESSIONLISTREQUEST = "BI";
+        public const string SETTLEMENTOBLIGATIONREPORT = "BQ";
+        public const string DERIVATIVESECURITYLISTUPDATEREPORT = "BR";
+        public const string TRADINGSESSIONLISTUPDATEREPORT = "BS";
+        public const string MARKETDEFINITIONREQUEST = "BT";
+        public const string MARKETDEFINITION = "BU";
+        public const string MARKETDEFINITIONUPDATEREPORT = "BV";
+        public const string APPLICATIONMESSAGEREQUEST = "BW";
+        public const string APPLICATIONMESSAGEREQUESTACK = "BX";
+        public const string LOGON = "A";
+        public const string APPLICATIONMESSAGEREPORT = "BY";
+        public const string ORDERMASSACTIONREPORT = "BZ";
+        public const string ORDERMASSACTIONREQUEST = "CA";
+        public const string USERNOTIFICATION = "CB";
+        public const string STREAMASSIGNMENTREQUEST = "CC";
+        public const string STREAMASSIGNMENTREPORT = "CD";
+        public const string STREAMASSIGNMENTREPORTACK = "CE";
+        public const string PARTYDETAILSLISTREQUEST = "CF";
+        public const string PARTYDETAILSLISTREPORT = "CG";
+        public const string MARGINREQUIREMENTINQUIRY = "CH";
+        public const string NEWS = "B";
+        public const string MARGINREQUIREMENTINQUIRYACK = "CI";
+        public const string MARGINREQUIREMENTREPORT = "CJ";
+        public const string PARTYDETAILSLISTUPDATEREPORT = "CK";
+        public const string PARTYRISKLIMITSREQUEST = "CL";
+        public const string PARTYRISKLIMITSREPORT = "CM";
+        public const string SECURITYMASSSTATUSREQUEST = "CN";
+        public const string SECURITYMASSSTATUS = "CO";
+        public const string ACCOUNTSUMMARYREPORT = "CQ";
+        public const string PARTYRISKLIMITSUPDATEREPORT = "CR";
+        public const string PARTYRISKLIMITSDEFINITIONREQUEST = "CS";
+        public const string EMAIL = "C";
+        public const string PARTYRISKLIMITSDEFINITIONREQUESTACK = "CT";
+        public const string PARTYENTITLEMENTSREQUEST = "CU";
+        public const string PARTYENTITLEMENTSREPORT = "CV";
+        public const string QUOTEACK = "CW";
+        public const string PARTYDETAILSDEFINITIONREQUEST = "CX";
+        public const string PARTYDETAILSDEFINITIONREQUESTACK = "CY";
+        public const string PARTYENTITLEMENTSUPDATEREPORT = "CZ";
+        public const string PARTYENTITLEMENTSDEFINITIONREQUEST = "DA";
+        public const string PARTYENTITLEMENTSDEFINITIONREQUESTACK = "DB";
+        public const string TRADEMATCHREPORT = "DC";
+        public const string NEWORDERSINGLE = "D";
+        public const string TRADEMATCHREPORTACK = "DD";
+        public const string PARTYRISKLIMITSREPORTACK = "DE";
+        public const string PARTYRISKLIMITCHECKREQUEST = "DF";
+        public const string PARTYRISKLIMITCHECKREQUESTACK = "DG";
+        public const string PARTYACTIONREQUEST = "DH";
+        public const string PARTYACTIONREPORT = "DI";
+        public const string MASSORDER = "DJ";
+        public const string MASSORDERACK = "DK";
+        public const string POSITIONTRANSFERINSTRUCTION = "DL";
+        public const string POSITIONTRANSFERINSTRUCTIONACK = "DM";
+        public const string NEWORDERLIST = "E";
+        public const string POSITIONTRANSFERREPORT = "DN";
+        public const string MARKETDATASTATISTICSREQUEST = "DO";
+        public const string MARKETDATASTATISTICSREPORT = "DP";
+        public const string COLLATERALREPORTACK = "DQ";
+        public const string MARKETDATAREPORT = "DR";
+        public const string CROSSREQUEST = "DS";
+        public const string CROSSREQUESTACK = "DT";
+        public const string ALLOCATIONINSTRUCTIONALERTREQUEST = "DU";
+        public const string ALLOCATIONINSTRUCTIONALERTREQUESTACK = "DV";
+        public const string TRADEAGGREGATIONREQUEST = "DW";
+        public const string ORDERCANCELREQUEST = "F";
+        public const string TRADEAGGREGATIONREPORT = "DX";
+        public const string PAYMANAGEMENTREPORT = "EA";
+        public const string PAYMANAGEMENTREPORTACK = "EB";
+        public const string PAYMANAGEMENTREQUEST = "DY";
+        public const string PAYMANAGEMENTREQUESTACK = "DZ";
+        public const string ORDERCANCELREPLACEREQUEST = "G";
+        public const string ORDERSTATUSREQUEST = "H";
+        public const string ALLOCATIONINSTRUCTION = "J";
+        public const string TESTREQUEST = "1";
+        public const string LISTCANCELREQUEST = "K";
+        public const string LISTEXECUTE = "L";
+        public const string LISTSTATUSREQUEST = "M";
+        public const string LISTSTATUS = "N";
+        public const string ALLOCATIONINSTRUCTIONACK = "P";
+        public const string DONTKNOWTRADE = "Q";
+        public const string QUOTEREQUEST = "R";
+        public const string QUOTE = "S";
+        public const string SETTLEMENTINSTRUCTIONS = "T";
+        public const string MARKETDATAREQUEST = "V";
+        public const string RESENDREQUEST = "2";
+        public const string MARKETDATASNAPSHOTFULLREFRESH = "W";
+        public const string MARKETDATAINCREMENTALREFRESH = "X";
+        public const string MARKETDATAREQUESTREJECT = "Y";
+        public const string QUOTECANCEL = "Z";
+        public const string QUOTESTATUSREQUEST = "a";
+        public const string MASSQUOTEACK = "b";
+        public const string SECURITYDEFINITIONREQUEST = "c";
+        public const string SECURITYDEFINITION = "d";
+        public const string SECURITYSTATUSREQUEST = "e";
+        public const string SECURITYSTATUS = "f";
+        public const string REJECT = "3";
+        public const string TRADINGSESSIONSTATUSREQUEST = "g";
+        public const string TRADINGSESSIONSTATUS = "h";
+        public const string MASSQUOTE = "i";
+        public const string BUSINESSMESSAGEREJECT = "j";
+        public const string BIDREQUEST = "k";
+        public const string BIDRESPONSE = "l";
+        public const string LISTSTRIKEPRICE = "m";
+        public const string XMLNONFIX = "n";
+        public const string REGISTRATIONINSTRUCTIONS = "o";
+        public const string REGISTRATIONINSTRUCTIONSRESPONSE = "p";
+        public const string SEQUENCERESET = "4";
+        public const string ORDERMASSCANCELREQUEST = "q";
+        public const string ORDERMASSCANCELREPORT = "r";
+        public const string NEWORDERCROSS = "s";
+        public const string CROSSORDERCANCELREPLACEREQUEST = "t";
+        public const string CROSSORDERCANCELREQUEST = "u";
+        public const string SECURITYTYPEREQUEST = "v";
+        public const string SECURITYTYPES = "w";
+        public const string SECURITYLISTREQUEST = "x";
+        public const string SECURITYLIST = "y";
+        public const string DERIVATIVESECURITYLISTREQUEST = "z";
+        public const string LOGOUT = "5";
+        public const string DERIVATIVESECURITYLIST = "AA";
+        public const string NEWORDERMULTILEG = "AB";
+        public const string MULTILEGORDERCANCELREPLACE = "AC";
+        public const string TRADECAPTUREREPORTREQUEST = "AD";
+        public const string TRADECAPTUREREPORT = "AE";
+        public const string ORDERMASSSTATUSREQUEST = "AF";
+        public const string QUOTEREQUESTREJECT = "AG";
+        public const string RFQREQUEST = "AH";
+        public const string QUOTESTATUSREPORT = "AI";
+        public const string QUOTERESPONSE = "AJ";
+        public const string IOI = "6";
+        public const string CONFIRMATION = "AK";
+        public const string POSITIONMAINTENANCEREQUEST = "AL";
+        public const string POSITIONMAINTENANCEREPORT = "AM";
+        public const string REQUESTFORPOSITIONS = "AN";
+        public const string REQUESTFORPOSITIONSACK = "AO";
+        public const string POSITIONREPORT = "AP";
+        public const string TRADECAPTUREREPORTREQUESTACK = "AQ";
+        public const string TRADECAPTUREREPORTACK = "AR";
+        public const string ALLOCATIONREPORT = "AS";
+        public const string ALLOCATIONREPORTACK = "AT";
+        public const string ADVERTISEMENT = "7";
+        public const string CONFIRMATIONACK = "AU";
+        public const string SETTLEMENTINSTRUCTIONREQUEST = "AV";
+        public const string ASSIGNMENTREPORT = "AW";
+        public const string COLLATERALREQUEST = "AX";
+        public const string COLLATERALASSIGNMENT = "AY";
+        public const string COLLATERALRESPONSE = "AZ";
+        public const string COLLATERALREPORT = "BA";
+        public const string COLLATERALINQUIRY = "BB";
+        public const string NETWORKCOUNTERPARTYSYSTEMSTATUSREQUEST = "BC";
+        public const string NETWORKCOUNTERPARTYSYSTEMSTATUSRESPONSE = "BD";
+        public const string EXECUTIONREPORT = "8";
+        public const string USERREQUEST = "BE";
+        public const string USERRESPONSE = "BF";
+        public const string COLLATERALINQUIRYACK = "BG";
+        public const string CONFIRMATIONREQUEST = "BH";
+        public const string CONTRARYINTENTIONREPORT = "BO";
+        public const string SECURITYDEFINITIONUPDATEREPORT = "BP";
+        public const string SECURITYLISTUPDATEREPORT = "BK";
+        public const string ADJUSTEDPOSITIONREPORT = "BL";
+        public const string ALLOCATIONINSTRUCTIONALERT = "BM";
+        public const string EXECUTIONACK = "BN";
     }
 
 
@@ -6694,6 +6954,9 @@ namespace QuickFix.Fields
         public const int NOT_AUTHORIZED = 6;
         public const int DELIVERTO_FIRM_NOT_AVAILABLE_AT_THIS_TIME = 7;
         public const int INVALID_PRICE_INCREMENT = 18;
+        public const int THROTTLE_LIMIT_EXCEEDED = 8;
+        public const int THROTTLE_LIMIT_EXCEEDED_SESSION_WILL_BE_DISCONNECTED = 9;
+        public const int THROTTLED_MESSAGES_REJECTED_ON_REQUEST = 10;
         public const int UNKNOWN_MESSAGE_TYPE = 3;
         public const int UNKOWN_ID = 1;
     }
@@ -7864,8 +8127,8 @@ namespace QuickFix.Fields
         public const string CUSIP = "1";
         public const string SEDOL = "2";
         public const string QUIK = "3";
-        public const string ISIN_NUMBER = "4";
-        public const string RIC_CODE = "5";
+        public const string ISIN = "4";
+        public const string RIC = "5";
         public const string ISO_CURRENCY_CODE = "6";
         public const string ISO_COUNTRY_CODE = "7";
         public const string EXCHANGE_SYMBOL = "8";
@@ -7880,9 +8143,21 @@ namespace QuickFix.Fields
         public const string CLEARING_HOUSE = "H";
         public const string ISDA_FPML_PRODUCT_SPECIFICATION = "I";
         public const string OPTION_PRICE_REPORTING_AUTHORITY = "J";
-        public const string LETTER_OF_CREDIT = "L";
         public const string ISDA_FPML_PRODUCT_URL = "K";
+        public const string LETTER_OF_CREDIT = "L";
         public const string MARKETPLACE_ASSIGNED_IDENTIFIER = "M";
+        public const string MARKIT_RED_ENTITY_CLIP = "N";
+        public const string MARKIT_RED_PAIR_CLIP = "P";
+        public const string CFTC_COMMODITY_CODE = "Q";
+        public const string ISDA_COMMODITY_REFERENCE_PRICE = "R";
+        public const string FINANCIAL_INSTRUMENT_GLOBAL_IDENTIFIER = "S";
+        public const string LEGAL_ENTITY_IDENTIFIER = "T";
+        public const string SYNTHETIC = "U";
+        public const string FIDESSA_INSTRUMENT_MNEMONIC = "V";
+        public const string INDEX_NAME = "W";
+        public const string UNIFORM_SYMBOL = "X";
+        public const string ISIN_NUMBER = "4";
+        public const string RIC_CODE = "5";
         public const string CLEARING_HOUSE_CLEARING_ORGANIZATION = "H";
         public const string OPTIONS_PRICE_REPORTING_AUTHORITY = "J";
     }
@@ -8770,14 +9045,8 @@ namespace QuickFix.Fields
 
         // Field Enumerations
         public const int ACCEPTED = 0;
-        public const int CANCEL_FOR_SYMBOL = 1;
-        public const int PENDING = 10;
-        public const int PASS = 11;
-        public const int LOCKED_MARKET_WARNING = 12;
-        public const int CROSS_MARKET_WARNING = 13;
-        public const int CANCELED_DUE_TO_LOCK_MARKET = 14;
-        public const int CANCELED_DUE_TO_CROSS_MARKET = 15;
-        public const int CANCELED_FOR_SECURITY_TYPE = 2;
+        public const int CANCELED_FOR_SPECIFIC_SECURITIES = 1;
+        public const int CANCELED_FOR_SPECIFIC_SECURITYTYPES = 2;
         public const int CANCELED_FOR_UNDERLYING = 3;
         public const int CANCELED_ALL = 4;
         public const int REJECTED = 5;
@@ -8785,11 +9054,25 @@ namespace QuickFix.Fields
         public const int EXPIRED = 7;
         public const int QUERY = 8;
         public const int QUOTE_NOT_FOUND = 9;
+        public const int PENDING = 10;
+        public const int PASS = 11;
+        public const int LOCKED_MARKET_WARNING = 12;
+        public const int CROSSED_MARKET_WARNING = 13;
+        public const int CANCELED_DUE_TO_LOCKED_MARKET = 14;
+        public const int CANCELED_DUE_TO_CROSSED_MARKET = 15;
         public const int ACTIVE = 16;
         public const int CANCELED = 17;
         public const int UNSOLICITED_QUOTE_REPLENISHMENT = 18;
         public const int PENDING_END_TRADE = 19;
         public const int TOO_LATE_TO_END = 20;
+        public const int TRADED = 21;
+        public const int TRADED_AND_REMOVED = 22;
+        public const int CONTRACT_TERMINATED = 23;
+        public const int CANCEL_FOR_SYMBOL = 1;
+        public const int CROSS_MARKET_WARNING = 13;
+        public const int CANCELED_DUE_TO_LOCK_MARKET = 14;
+        public const int CANCELED_DUE_TO_CROSS_MARKET = 15;
+        public const int CANCELED_FOR_SECURITY_TYPE = 2;
         public const int CANCELED_FOR_SYMBOL = 1;
     }
 
@@ -8823,24 +9106,37 @@ namespace QuickFix.Fields
 
 
         // Field Enumerations
-        public const char KOREAN_INVESTOR_ID = '1';
-        public const char TAIWANESE_QUALIFIED_FOREIGN_INVESTOR_ID_QFII_FID = '2';
-        public const char TAIWANESE_TRADING_ACCT = '3';
-        public const char MALAYSIAN_CENTRAL_DEPOSITORY = '4';
-        public const char CHINESE_INVESTOR_ID = '5';
         public const char UK_NATIONAL_INSURANCE_OR_PENSION_NUMBER = '6';
         public const char US_SOCIAL_SECURITY_NUMBER = '7';
         public const char US_EMPLOYER_OR_TAX_ID_NUMBER = '8';
         public const char AUSTRALIAN_BUSINESS_NUMBER = '9';
         public const char AUSTRALIAN_TAX_FILE_NUMBER = 'A';
+        public const char KOREAN_INVESTOR_ID = '1';
+        public const char TAIWANESE_QUALIFIED_FOREIGN_INVESTOR_ID_QFII_FID = '2';
+        public const char TAIWANESE_TRADING_ACCT = '3';
+        public const char MALAYSIAN_CENTRAL_DEPOSITORY = '4';
+        public const char CHINESE_INVESTOR_ID = '5';
+        public const char DIRECTED_BROKER_THREE_CHARACTER_ACRONYM_AS_DEFINED_IN_ISITC_ETC_BEST_PRACTICE_GUIDELINES_DOCUMENT = 'I';
         public const char BIC = 'B';
         public const char GENERALLY_ACCEPTED_MARKET_PARTICIPANT_IDENTIFIER = 'C';
         public const char PROPRIETARY = 'D';
         public const char ISO_COUNTRY_CODE = 'E';
         public const char SETTLEMENT_ENTITY_LOCATION = 'F';
-        public const char MIC = 'G';
+        public const char MARKET_IDENTIFIER_CODE = 'G';
         public const char CSD_PARTICIPANT_MEMBER_CODE = 'H';
-        public const char DIRECTED_BROKER_THREE_CHARACTER_ACRONYM_AS_DEFINED_IN_ISITC_ETC_BEST_PRACTICE_GUIDELINES_DOCUMENT = 'I';
+        public const char TAX_ID = 'J';
+        public const char AUSTRALIAN_COMPANY_NUMBER = 'K';
+        public const char AUSTRALIAN_REGISTERED_BODY_NUMBER = 'L';
+        public const char CFTC_REPORTING_FIRM_IDENTIFIER = 'M';
+        public const char LEGAL_ENTITY_IDENTIFIER = 'N';
+        public const char INTERIM_IDENTIFIER = 'O';
+        public const char SHORT_CODE_IDENTIFIER = 'P';
+        public const char NATIONAL_ID_OF_NATURAL_PERSON = 'Q';
+        public const char INDIA_PERMANENT_ACCOUNT_NUMBER = 'R';
+        public const char FIRM_DESIGNATED_IDENTIFIER = 'S';
+        public const char SPECIAL_SEGREGATED_ACCOUNT_ID = 'T';
+        public const char MASTER_SPECIAL_SEGREGATED_ACCOUNT_ID = 'U';
+        public const char MIC = 'G';
         public const char PROPRIETARY_CUSTOM_CODE = 'D';
         public const char TAIWANESE_TRADING_ACCOUNT = '3';
         public const char MALAYSIAN_CENTRAL_DEPOSITORY_NUMBER = '4';
@@ -8930,6 +9226,14 @@ namespace QuickFix.Fields
 
         // Field Enumerations
         public const int EXECUTING_FIRM = 1;
+        public const int BROKER_OF_CREDIT = 2;
+        public const int CLIENT_ID = 3;
+        public const int CLEARING_FIRM = 4;
+        public const int INVESTOR_ID = 5;
+        public const int INTRODUCING_FIRM = 6;
+        public const int ENTERING_FIRM = 7;
+        public const int LOCATE = 8;
+        public const int FUND_MANAGER_CLIENT_ID = 9;
         public const int SETTLEMENT_LOCATION = 10;
         public const int ORDER_ORIGINATION_TRADER = 11;
         public const int EXECUTING_TRADER = 12;
@@ -8940,7 +9244,6 @@ namespace QuickFix.Fields
         public const int CONTRA_FIRM = 17;
         public const int CONTRA_CLEARING_FIRM = 18;
         public const int SPONSORING_FIRM = 19;
-        public const int BROKER_OF_CREDIT = 2;
         public const int UNDERLYING_CONTRA_FIRM = 20;
         public const int CLEARING_ORGANIZATION = 21;
         public const int EXCHANGE = 22;
@@ -8950,7 +9253,6 @@ namespace QuickFix.Fields
         public const int BUYER_SELLER = 27;
         public const int CUSTODIAN = 28;
         public const int INTERMEDIARY = 29;
-        public const int CLIENT_ID = 3;
         public const int AGENT = 30;
         public const int SUB_CUSTODIAN = 31;
         public const int BENEFICIARY = 32;
@@ -8960,13 +9262,8 @@ namespace QuickFix.Fields
         public const int ENTERING_TRADER = 36;
         public const int CONTRA_TRADER = 37;
         public const int POSITION_ACCOUNT = 38;
-        public const int CLEARING_FIRM = 4;
-        public const int INVESTOR_ID = 5;
-        public const int INTRODUCING_FIRM = 6;
-        public const int ENTERING_FIRM = 7;
-        public const int LOCATE = 8;
-        public const int FUND_MANAGER_CLIENT_ID = 9;
-        public const int INTRODUCING_BROKER = 60;
+        public const int CONTRA_INVESTOR_ID = 39;
+        public const int TRANSFER_TO_FIRM = 40;
         public const int CONTRA_POSITION_ACCOUNT = 41;
         public const int CONTRA_EXCHANGE = 42;
         public const int INTERNAL_CARRY_ACCOUNT = 43;
@@ -8986,8 +9283,7 @@ namespace QuickFix.Fields
         public const int UNACCEPTABLE_COUNTERPARTY = 57;
         public const int ENTERING_UNIT = 58;
         public const int EXECUTING_UNIT = 59;
-        public const int CONTRA_INVESTOR_ID = 39;
-        public const int TRANSFER_TO_FIRM = 40;
+        public const int INTRODUCING_BROKER = 60;
         public const int QUOTE_ORIGINATOR = 61;
         public const int REPORT_ORIGINATOR = 62;
         public const int SYSTEMATIC_INTERNALISER = 63;
@@ -9008,11 +9304,53 @@ namespace QuickFix.Fields
         public const int ALLOCATION_ENTITY = 78;
         public const int PRIME_BROKER_PROVIDING_GENERAL_TRADE_SERVICES = 79;
         public const int STEP_OUT_FIRM = 80;
-        public const int BROKERCLEARINGID = 81;
+        public const int BROKER_CIENT_ID = 81;
         public const int CENTRAL_REGISTRATION_DEPOSITORY = 82;
         public const int CLEARING_ACCOUNT = 83;
         public const int ACCEPTABLE_SETTLING_COUNTERPARTY = 84;
         public const int UNACCEPTABLE_SETTLING_COUNTERPARTY = 85;
+        public const int CLS_MEMBER_BANK = 86;
+        public const int IN_CONCERT_GROUP = 87;
+        public const int IN_CONCERT_CONTROLLING_ENTITY = 88;
+        public const int LARGE_POSITIONS_REPORTING_ACCOUNT = 89;
+        public const int SETTLEMENT_FIRM = 90;
+        public const int SETTLEMENT_ACCOUNT = 91;
+        public const int REPORTING_MARKET_CENTER = 92;
+        public const int RELATED_REPORTING_MARKET_CENTER = 93;
+        public const int AWAY_MARKET = 94;
+        public const int GIVE_UP = 95;
+        public const int TAKE_UP = 96;
+        public const int GIVE_UP_CLEARING_FIRM = 97;
+        public const int TAKE_UP_CLEARING_FIRM = 98;
+        public const int ORIGINATING_MARKET = 99;
+        public const int MARGIN_ACCOUNT = 100;
+        public const int COLLATERAL_ASSET_ACCOUNT = 101;
+        public const int DATA_REPOSITORY = 102;
+        public const int CALCULATION_AGENT = 103;
+        public const int SENDER_OF_EXERCISE_NOTICE = 104;
+        public const int RECEIVER_OF_EXERCISE_NOTICE = 105;
+        public const int RATE_REFERENCE_BANK = 106;
+        public const int CORRESPONDENT = 107;
+        public const int BENEFICIARYS_BANK_OR_DEPOSITORY_INSTITUTION = 109;
+        public const int BORROWER = 110;
+        public const int PRIMARY_OBLIGATOR = 111;
+        public const int GUARANTOR = 112;
+        public const int EXCLUDED_REFERENCE_ENTITY = 113;
+        public const int DETERMINING_PARTY = 114;
+        public const int HEDGING_PARTY = 115;
+        public const int REPORTING_ENTITY = 116;
+        public const int SALES_PERSON = 117;
+        public const int OPERATOR = 118;
+        public const int CENTRAL_SECURITIES_DEPOSITORY_119 = 119;
+        public const int INTERNATIONAL_CENTRAL_SECURITIES_DEPOSITORY = 120;
+        public const int TRADING_SUB_ACCOUNT = 121;
+        public const int INVESTMENT_DECISION_MAKER = 122;
+        public const int PUBLISHING_INTERMEDIARY = 123;
+        public const int CENTRAL_SECURITIES_DEPOSITORY_124 = 124;
+        public const int ISSUER = 125;
+        public const int CONTRA_CUSTOMER_ACCOUNT = 126;
+        public const int CONTRA_INVESTMENT_DECISION_MAKER = 127;
+        public const int BROKERCLEARINGID = 81;
         public const int FORIEGN_FIRM = 46;
         public const int LOCATE_LENDING_FIRM = 8;
     }
@@ -10507,10 +10845,10 @@ namespace QuickFix.Fields
         public const int INVALID_OR_UNKNOWN_CFICODE = 4;
         public const int INVALID_OR_UNKNOWN_SECURITYTYPE = 5;
         public const int INVALID_OR_UNKNOWN_TRADING_SESSION = 6;
-        public const int OTHER = 99;
         public const int INVALID_OR_UNKNOWN_MARKET = 7;
         public const int INVALID_OR_UNKOWN_MARKET_SEGMENT = 8;
         public const int INVALID_OR_UNKNOWN_SECURITY_GROUP = 9;
+        public const int OTHER = 99;
         public const int INVALID_OR_UNKNOWN_SECURITY_ISSUER = 10;
         public const int INVALID_OR_UNKNOWN_ISSUER_OF_UNDERLYING_SECURITY = 11;
         public const int INVALID_OR_UNKNOWN_UNDERLYING = 2;
@@ -29158,6 +29496,137 @@ namespace QuickFix.Fields
         public RiskEncodedSecurityDesc(string val)
             :base(Tags.RiskEncodedSecurityDesc, val) {}
 
+    }
+
+
+    /// <summary>
+    /// OrderOrigination Field
+    /// </summary>/
+    public sealed class OrderOrigination : IntField
+    {
+        public const int TAG = 1724;
+
+        public OrderOrigination()
+            :base(Tags.OrderOrigination) {}
+        public OrderOrigination(int val)
+            :base(Tags.OrderOrigination, val) {}
+
+
+        // Field Enumerations
+        public const int ORDER_RECEIVED_FROM_A_CUSTOMER = 1;
+        public const int ORDER_RECEIVED_FROM_WITHIN_THE_FIRM = 2;
+        public const int ORDER_RECEIVED_FROM_ANOTHER_BROKER_DEALER = 3;
+        public const int ORDER_RECEIVED_FROM_A_CUSTOMER_OR_ORIGINATED_FROM_WITHIN_THE_FIRM = 4;
+        public const int ORDER_RECEIVED_FROM_A_DIRECT_ACCESS_OR_SPONSORED_ACCESS_CUSTOMER = 5;
+        public const int ORDER_RECEIVED_FROM_A_FOREIGN_DEALER_EQUIVALENT = 6;
+        public const int ORDER_RECEIVED_FROM_AN_EXECUTION_ONLY_SERVICE = 7;
+    }
+
+
+    /// <summary>
+    /// BidMDEntryID Field
+    /// </summary>/
+    public sealed class BidMDEntryID : StringField
+    {
+        public const int TAG = 1745;
+
+        public BidMDEntryID()
+            :base(Tags.BidMDEntryID) {}
+        public BidMDEntryID(string val)
+            :base(Tags.BidMDEntryID, val) {}
+
+    }
+
+
+    /// <summary>
+    /// OfferMDEntryID Field
+    /// </summary>/
+    public sealed class OfferMDEntryID : StringField
+    {
+        public const int TAG = 1746;
+
+        public OfferMDEntryID()
+            :base(Tags.OfferMDEntryID) {}
+        public OfferMDEntryID(string val)
+            :base(Tags.OfferMDEntryID, val) {}
+
+    }
+
+
+    /// <summary>
+    /// BidQuoteID Field
+    /// </summary>/
+    public sealed class BidQuoteID : StringField
+    {
+        public const int TAG = 1747;
+
+        public BidQuoteID()
+            :base(Tags.BidQuoteID) {}
+        public BidQuoteID(string val)
+            :base(Tags.BidQuoteID, val) {}
+
+    }
+
+
+    /// <summary>
+    /// OfferQuoteID Field
+    /// </summary>/
+    public sealed class OfferQuoteID : StringField
+    {
+        public const int TAG = 1748;
+
+        public OfferQuoteID()
+            :base(Tags.OfferQuoteID) {}
+        public OfferQuoteID(string val)
+            :base(Tags.OfferQuoteID, val) {}
+
+    }
+
+
+    /// <summary>
+    /// PartyRoleQualifier Field
+    /// </summary>/
+    public sealed class PartyRoleQualifier : IntField
+    {
+        public const int TAG = 2376;
+
+        public PartyRoleQualifier()
+            :base(Tags.PartyRoleQualifier) {}
+        public PartyRoleQualifier(int val)
+            :base(Tags.PartyRoleQualifier, val) {}
+
+
+        // Field Enumerations
+        public const int AGENCY = 0;
+        public const int PRINCIPAL = 1;
+        public const int RISKLESS_PRINCIPAL = 2;
+        public const int GENERAL_CLEARING_MEMBER = 3;
+        public const int INDIVIDUAL_CLEARING_MEMBER = 4;
+        public const int PREFERRED_MARKET_MAKER = 5;
+        public const int DIRECTED_MARKET_MAKER = 6;
+        public const int BANK = 7;
+        public const int HUB = 8;
+        public const int PRIMARY_TRADE_REPOSITORY = 9;
+        public const int ORIGINAL_TRADE_REPOSITORY = 10;
+        public const int ADDITIONAL_INTERNATIONAL_TRADE_REPOSITORY = 11;
+        public const int ADDITIONAL_DOMESTIC_TRADE_REPOSITORY = 12;
+        public const int RELATED_EXCHANGE = 13;
+        public const int OPTIONS_EXCHANGE = 14;
+        public const int SPECIFIED_EXCHANGE = 15;
+        public const int CONSTITUENT_EXCHANGE = 16;
+        public const int EXEMPT_FROM_TRADE_REPORTING = 17;
+        public const int CURRENT = 18;
+        public const int NEW = 19;
+        public const int DESIGNATED_SPONSOR = 20;
+        public const int SPECIALIST = 21;
+        public const int ALGORITHM = 22;
+        public const int FIRM_OR_LEGAL_ENTITY = 23;
+        public const int NATURAL_PERSON = 24;
+        public const int REGULAR_TRADER = 25;
+        public const int HEAD_TRADER = 26;
+        public const int SUPERVISOR = 27;
+        public const int TRI_PARTY = 28;
+        public const int LENDER = 29;
     }
 
 
