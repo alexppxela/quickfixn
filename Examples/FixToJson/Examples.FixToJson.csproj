@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>netcoreapp2.0</TargetFrameworks>
+    <TargetFramework>net7.0</TargetFramework>
     <RootNamespace>FixToJson</RootNamespace>
     <AssemblyName>FixToJson</AssemblyName>
     <Copyright>Copyright © Connamara Systems, LLC 2022</Copyright>
