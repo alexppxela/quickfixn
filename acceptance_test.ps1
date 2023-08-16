@@ -56,7 +56,7 @@ function RunSuite
         [string]$Configuration,
 
         [Parameter(Mandatory, Position=1, ValueFromPipeline)]
-        [ValidateSet('net6.0','net461','netcoreapp2.1')]
+        [ValidateSet('net7.0','net6.0','net461','netcoreapp2.1')]
         [string[]]$Framework,
 
         [switch]$UseWsl
@@ -105,7 +105,7 @@ try {
 
     Remove-Item AcceptanceTests_*.xml
 
-    'net6.0' | RunSuite -Configuration $Configuration -UseWsl:$($UseWsl -and $UseWsl.IsPresent)
+    'net7.0' | RunSuite -Configuration $Configuration -UseWsl:$($UseWsl -and $UseWsl.IsPresent)
 } finally {
     Pop-Location -StackName AcceptanceTest
 

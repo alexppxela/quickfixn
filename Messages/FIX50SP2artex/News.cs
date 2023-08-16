@@ -5,139 +5,114 @@ namespace QuickFix
 {
     namespace FIX50SP2 
     {
-        public class SecurityList : Message
+        public class News : Message
         {
-            public const string MsgType = "y";
+            public const string MsgType = "B";
 
-            public SecurityList() : base()
+            public News() : base()
             {
-                this.Header.SetField(new QuickFix.Fields.MsgType("y"));
+                this.Header.SetField(new QuickFix.Fields.MsgType("B"));
             }
 
+            public News(
+                    QuickFix.Fields.Headline aHeadline
+                ) : this()
+            {
+                this.Headline = aHeadline;
+            }
 
-            public QuickFix.Fields.SecurityReqID SecurityReqID
+            public QuickFix.Fields.OrigTime OrigTime
             { 
                 get 
                 {
-                    QuickFix.Fields.SecurityReqID val = new QuickFix.Fields.SecurityReqID();
+                    QuickFix.Fields.OrigTime val = new QuickFix.Fields.OrigTime();
                     GetField(val);
                     return val;
                 }
                 set { SetField(value); }
             }
             
-            public void Set(QuickFix.Fields.SecurityReqID val) 
+            public void Set(QuickFix.Fields.OrigTime val) 
             { 
-                this.SecurityReqID = val;
+                this.OrigTime = val;
             }
             
-            public QuickFix.Fields.SecurityReqID Get(QuickFix.Fields.SecurityReqID val) 
+            public QuickFix.Fields.OrigTime Get(QuickFix.Fields.OrigTime val) 
             { 
                 GetField(val);
                 return val;
             }
             
-            public bool IsSet(QuickFix.Fields.SecurityReqID val) 
+            public bool IsSet(QuickFix.Fields.OrigTime val) 
             { 
-                return IsSetSecurityReqID();
+                return IsSetOrigTime();
             }
             
-            public bool IsSetSecurityReqID() 
+            public bool IsSetOrigTime() 
             { 
-                return IsSetField(Tags.SecurityReqID);
+                return IsSetField(Tags.OrigTime);
             }
-            public QuickFix.Fields.SecurityResponseID SecurityResponseID
+            public QuickFix.Fields.Urgency Urgency
             { 
                 get 
                 {
-                    QuickFix.Fields.SecurityResponseID val = new QuickFix.Fields.SecurityResponseID();
+                    QuickFix.Fields.Urgency val = new QuickFix.Fields.Urgency();
                     GetField(val);
                     return val;
                 }
                 set { SetField(value); }
             }
             
-            public void Set(QuickFix.Fields.SecurityResponseID val) 
+            public void Set(QuickFix.Fields.Urgency val) 
             { 
-                this.SecurityResponseID = val;
+                this.Urgency = val;
             }
             
-            public QuickFix.Fields.SecurityResponseID Get(QuickFix.Fields.SecurityResponseID val) 
+            public QuickFix.Fields.Urgency Get(QuickFix.Fields.Urgency val) 
             { 
                 GetField(val);
                 return val;
             }
             
-            public bool IsSet(QuickFix.Fields.SecurityResponseID val) 
+            public bool IsSet(QuickFix.Fields.Urgency val) 
             { 
-                return IsSetSecurityResponseID();
+                return IsSetUrgency();
             }
             
-            public bool IsSetSecurityResponseID() 
+            public bool IsSetUrgency() 
             { 
-                return IsSetField(Tags.SecurityResponseID);
+                return IsSetField(Tags.Urgency);
             }
-            public QuickFix.Fields.TotNoRelatedSym TotNoRelatedSym
+            public QuickFix.Fields.Headline Headline
             { 
                 get 
                 {
-                    QuickFix.Fields.TotNoRelatedSym val = new QuickFix.Fields.TotNoRelatedSym();
+                    QuickFix.Fields.Headline val = new QuickFix.Fields.Headline();
                     GetField(val);
                     return val;
                 }
                 set { SetField(value); }
             }
             
-            public void Set(QuickFix.Fields.TotNoRelatedSym val) 
+            public void Set(QuickFix.Fields.Headline val) 
             { 
-                this.TotNoRelatedSym = val;
+                this.Headline = val;
             }
             
-            public QuickFix.Fields.TotNoRelatedSym Get(QuickFix.Fields.TotNoRelatedSym val) 
+            public QuickFix.Fields.Headline Get(QuickFix.Fields.Headline val) 
             { 
                 GetField(val);
                 return val;
             }
             
-            public bool IsSet(QuickFix.Fields.TotNoRelatedSym val) 
+            public bool IsSet(QuickFix.Fields.Headline val) 
             { 
-                return IsSetTotNoRelatedSym();
+                return IsSetHeadline();
             }
             
-            public bool IsSetTotNoRelatedSym() 
+            public bool IsSetHeadline() 
             { 
-                return IsSetField(Tags.TotNoRelatedSym);
-            }
-            public QuickFix.Fields.LastFragment LastFragment
-            { 
-                get 
-                {
-                    QuickFix.Fields.LastFragment val = new QuickFix.Fields.LastFragment();
-                    GetField(val);
-                    return val;
-                }
-                set { SetField(value); }
-            }
-            
-            public void Set(QuickFix.Fields.LastFragment val) 
-            { 
-                this.LastFragment = val;
-            }
-            
-            public QuickFix.Fields.LastFragment Get(QuickFix.Fields.LastFragment val) 
-            { 
-                GetField(val);
-                return val;
-            }
-            
-            public bool IsSet(QuickFix.Fields.LastFragment val) 
-            { 
-                return IsSetLastFragment();
-            }
-            
-            public bool IsSetLastFragment() 
-            { 
-                return IsSetField(Tags.LastFragment);
+                return IsSetField(Tags.Headline);
             }
             public QuickFix.Fields.NoRelatedSym NoRelatedSym
             { 
@@ -170,36 +145,98 @@ namespace QuickFix
             { 
                 return IsSetField(Tags.NoRelatedSym);
             }
-            public QuickFix.Fields.SecurityRequestResult SecurityRequestResult
+            public QuickFix.Fields.NoLinesOfText NoLinesOfText
             { 
                 get 
                 {
-                    QuickFix.Fields.SecurityRequestResult val = new QuickFix.Fields.SecurityRequestResult();
+                    QuickFix.Fields.NoLinesOfText val = new QuickFix.Fields.NoLinesOfText();
                     GetField(val);
                     return val;
                 }
                 set { SetField(value); }
             }
             
-            public void Set(QuickFix.Fields.SecurityRequestResult val) 
+            public void Set(QuickFix.Fields.NoLinesOfText val) 
             { 
-                this.SecurityRequestResult = val;
+                this.NoLinesOfText = val;
             }
             
-            public QuickFix.Fields.SecurityRequestResult Get(QuickFix.Fields.SecurityRequestResult val) 
+            public QuickFix.Fields.NoLinesOfText Get(QuickFix.Fields.NoLinesOfText val) 
             { 
                 GetField(val);
                 return val;
             }
             
-            public bool IsSet(QuickFix.Fields.SecurityRequestResult val) 
+            public bool IsSet(QuickFix.Fields.NoLinesOfText val) 
             { 
-                return IsSetSecurityRequestResult();
+                return IsSetNoLinesOfText();
             }
             
-            public bool IsSetSecurityRequestResult() 
+            public bool IsSetNoLinesOfText() 
             { 
-                return IsSetField(Tags.SecurityRequestResult);
+                return IsSetField(Tags.NoLinesOfText);
+            }
+            public QuickFix.Fields.URLLink URLLink
+            { 
+                get 
+                {
+                    QuickFix.Fields.URLLink val = new QuickFix.Fields.URLLink();
+                    GetField(val);
+                    return val;
+                }
+                set { SetField(value); }
+            }
+            
+            public void Set(QuickFix.Fields.URLLink val) 
+            { 
+                this.URLLink = val;
+            }
+            
+            public QuickFix.Fields.URLLink Get(QuickFix.Fields.URLLink val) 
+            { 
+                GetField(val);
+                return val;
+            }
+            
+            public bool IsSet(QuickFix.Fields.URLLink val) 
+            { 
+                return IsSetURLLink();
+            }
+            
+            public bool IsSetURLLink() 
+            { 
+                return IsSetField(Tags.URLLink);
+            }
+            public QuickFix.Fields.MarketID MarketID
+            { 
+                get 
+                {
+                    QuickFix.Fields.MarketID val = new QuickFix.Fields.MarketID();
+                    GetField(val);
+                    return val;
+                }
+                set { SetField(value); }
+            }
+            
+            public void Set(QuickFix.Fields.MarketID val) 
+            { 
+                this.MarketID = val;
+            }
+            
+            public QuickFix.Fields.MarketID Get(QuickFix.Fields.MarketID val) 
+            { 
+                GetField(val);
+                return val;
+            }
+            
+            public bool IsSet(QuickFix.Fields.MarketID val) 
+            { 
+                return IsSetMarketID();
+            }
+            
+            public bool IsSetMarketID() 
+            { 
+                return IsSetField(Tags.MarketID);
             }
             public class NoRelatedSymGroup : Group
             {
@@ -340,6 +377,55 @@ namespace QuickFix
                 public bool IsSetCurrency() 
                 { 
                     return IsSetField(Tags.Currency);
+                }
+            
+            }
+            public class NoLinesOfTextGroup : Group
+            {
+                public static int[] fieldOrder = {Tags.Text, 0};
+            
+                public NoLinesOfTextGroup() 
+                  :base( Tags.NoLinesOfText, Tags.Text, fieldOrder)
+                {
+                }
+            
+                public override Group Clone()
+                {
+                    var clone = new NoLinesOfTextGroup();
+                    clone.CopyStateFrom(this);
+                    return clone;
+                }
+            
+                public QuickFix.Fields.Text Text
+                { 
+                    get 
+                    {
+                        QuickFix.Fields.Text val = new QuickFix.Fields.Text();
+                        GetField(val);
+                        return val;
+                    }
+                    set { SetField(value); }
+                }
+                
+                public void Set(QuickFix.Fields.Text val) 
+                { 
+                    this.Text = val;
+                }
+                
+                public QuickFix.Fields.Text Get(QuickFix.Fields.Text val) 
+                { 
+                    GetField(val);
+                    return val;
+                }
+                
+                public bool IsSet(QuickFix.Fields.Text val) 
+                { 
+                    return IsSetText();
+                }
+                
+                public bool IsSetText() 
+                { 
+                    return IsSetField(Tags.Text);
                 }
             
             }

@@ -42,6 +42,15 @@
    <field name='Text' required='N' />
    <component name='Parties' required='N' />
   </message>
+  <message name='News' msgcat='app' msgtype='B'>
+   <field name='OrigTime' required='N' />
+   <field name='Urgency' required='N' />
+   <field name='Headline' required='Y' />
+   <component name='InstrmtGrp' required='N' />
+   <component name='LinesOfTextGrp' required='Y' />
+   <field name='URLLink' required='N' />
+   <field name='MarketID' required='N' />
+  </message>
   <message name='NewOrderSingle' msgtype='D' msgcat='app'>
    <field name='ClOrdID' required='Y' />
    <component name='Parties' required='N' />
@@ -124,6 +133,7 @@
    <component name='Instrument' required='Y' />
    <component name='MDFullGrp' required='Y' />
    <field name='LastUpdateTime' required='Y' />
+   <field name='TransactTime' required='N' />
   </message>
   <message name='MarketDataIncrementalRefresh' msgtype='X' msgcat='app'>
    <field name='MDReqID' required='N' />
@@ -149,6 +159,19 @@
    <component name='Parties' required='N' />
    <field name='Account' required='N' />
    <field name='SubscriptionRequestType' required='N' />
+  </message>
+  <message name='SecurityStatus' msgcat='app' msgtype='f'>
+   <field name='SecurityStatusReqID' required='N' />
+   <component name='Instrument' required='Y' />
+   <field name='TradingSessionID' required='N' />
+   <field name='SecurityTradingStatus' required='N' />
+   <field name='TransactTime' required='N' />
+  </message>
+  <message name='SecurityStatusRequest' msgcat='app' msgtype='e'>
+   <field name='SecurityStatusReqID' required='Y' />
+   <component name='Instrument' required='Y' />
+   <field name='SubscriptionRequestType' required='Y' />
+   <field name='TradingSessionID' required='N' />
   </message>
   <message name='BusinessMessageReject' msgtype='j' msgcat='app'>
    <field name='RefSeqNum' required='N' />
@@ -189,6 +212,7 @@
    <field name='TotNoRelatedSym' required='N' />
    <field name='LastFragment' required='N' />
    <component name='SecListGrp' required='N' />
+   <field name='SecurityRequestResult' required='N' />
   </message>
   <message name='OrderMassStatusRequest' msgtype='AF' msgcat='app'>
    <component name='Parties' required='N' />
@@ -225,6 +249,14 @@
  <components>
   <component name='Instrument'>
    <field name='Symbol' required='N' />
+   <field name='SecurityID' required='N' />
+   <field name='SecurityIDSource' required='N' />
+   <field name='Currency' required='N' />
+  </component>
+  <component name='InstrmtGrp'>
+   <group name='NoRelatedSym' required='N'>
+    <component name='Instrument' required='N' />
+   </group>
   </component>
   <component name='OrderQtyData'>
    <field name='OrderQty' required='N' />
@@ -271,6 +303,13 @@
     <field name='MDEntrySize' required='N' />
     <field name='MDEntryDate' required='N' />
     <field name='MDEntryTime' required='N' />
+    <field name='OrderID' required='N' />
+    <field name='QuoteEntryID' required='N' />
+    <field name='Text' required='N' />
+    <field name='OrdType' required='N' />
+    <field name='TradeID' required='N' />
+    <field name='TradeCondition' required='N' />
+    <field name='OpenCloseSettlFlag' required='N' />
    </group>
   </component>
   <component name='MDIncGrp'>
@@ -283,7 +322,19 @@
     <field name='MDEntrySize' required='N' />
     <field name='MDEntryDate' required='N' />
     <field name='MDEntryTime' required='N' />
+    <field name='OrderID' required='N' />
+    <field name='QuoteEntryID' required='N' />
+    <field name='Text' required='N' />
+    <field name='OrdType' required='N' />
+    <field name='TradeID' required='N' />
     <field name='MarketDepth' required='N' />
+    <field name='TradeCondition' required='N' />
+    <field name='OpenCloseSettlFlag' required='N' />
+   </group>
+  </component>
+  <component name='LinesOfTextGrp'>
+   <group name='NoLinesOfText' required='Y'>
+    <field name='Text' required='Y' />
    </group>
   </component>
  </components>
@@ -335,6 +386,7 @@
   </field>
   <field number='31' name='LastPx' type='PRICE' />
   <field number='32' name='LastQty' type='QTY' />
+  <field number='33' name='NoLinesOfText' type='NUMINGROUP' />
   <field number='34' name='MsgSeqNum' type='SEQNUM' />
   <field number='35' name='MsgType' type='STRING'>
    <value enum='0' description='HEARTBEAT' />
@@ -603,6 +655,11 @@
    <value enum='C' description='GOOD_FOR_THIS_MONTH' />
   </field>
   <field number='60' name='TransactTime' type='UTCTIMESTAMP' />
+  <field number='61' name='Urgency' type='CHAR'>
+   <value enum='0' description='NORMAL' />
+   <value enum='1' description='FLASH' />
+   <value enum='2' description='BACKGROUND' />
+  </field>
   <field number='97' name='PossResend' type='BOOLEAN'>
    <value enum='N' description='NO' />
    <value enum='Y' description='YES' />
@@ -680,6 +737,8 @@
    <value enum='Y' description='YES' />
   </field>
   <field number='146' name='NoRelatedSym' type='NUMINGROUP' />
+  <field number='148' name='Headline' type='STRING' />
+  <field number='149' name='URLLink' type='STRING' />
   <field number='150' name='ExecType' type='CHAR'>
    <value enum='0' description='NEW' />
    <value enum='3' description='DONE_FOR_DAY' />
@@ -773,6 +832,85 @@
   <field number='271' name='MDEntrySize' type='QTY' />
   <field number='272' name='MDEntryDate' type='UTCDATEONLY' />
   <field number='273' name='MDEntryTime' type='UTCTIMEONLY' />
+  <field number='277' name='TradeCondition' type='MULTIPLESTRINGVALUE'>
+   <value enum='A' description='CASH' />
+   <value enum='B' description='AVERAGE_PRICE_TRADE' />
+   <value enum='C' description='CASH_TRADE' />
+   <value enum='D' description='NEXT_DAY' />
+   <value enum='E' description='OPENING_REOPENING_TRADE_DETAIL' />
+   <value enum='F' description='INTRADAY_TRADE_DETAIL' />
+   <value enum='G' description='RULE_127_TRADE' />
+   <value enum='H' description='RULE_155_TRADE' />
+   <value enum='I' description='SOLD_LAST' />
+   <value enum='J' description='NEXT_DAY_TRADE' />
+   <value enum='K' description='OPENED' />
+   <value enum='L' description='SELLER' />
+   <value enum='M' description='SOLD' />
+   <value enum='N' description='STOPPED_STOCK' />
+   <value enum='P' description='IMBALANCE_MORE_BUYERS' />
+   <value enum='Q' description='IMBALANCE_MORE_SELLERS' />
+   <value enum='R' description='OPENING_PRICE' />
+   <value enum='Y' description='TRADES_RESULTING_FROM_MANUAL_SLOW_QUOTE' />
+   <value enum='Z' description='TRADES_RESULTING_FROM_INTERMARKET_SWEEP' />
+   <value enum='S' description='BARGAIN_CONDITION' />
+   <value enum='T' description='CONVERTED_PRICE_INDICATOR' />
+   <value enum='U' description='EXCHANGE_LAST' />
+   <value enum='V' description='FINAL_PRICE_OF_SESSION' />
+   <value enum='W' description='EX_PIT' />
+   <value enum='X' description='CROSSED_X' />
+   <value enum='0' description='CANCEL' />
+   <value enum='a' description='VOLUME_ONLY' />
+   <value enum='b' description='DIRECT_PLUS' />
+   <value enum='c' description='ACQUISITION' />
+   <value enum='d' description='BUNCHED' />
+   <value enum='e' description='DISTRIBUTION' />
+   <value enum='f' description='BUNCHED_SALE' />
+   <value enum='g' description='SPLIT_TRADE' />
+   <value enum='h' description='CANCEL_STOPPED' />
+   <value enum='i' description='CANCEL_ETH' />
+   <value enum='j' description='CANCEL_STOPPED_ETH' />
+   <value enum='k' description='OUT_OF_SEQUENCE_ETH' />
+   <value enum='l' description='CANCEL_LAST_ETH' />
+   <value enum='m' description='SOLD_LAST_SALE_ETH' />
+   <value enum='n' description='CANCEL_LAST' />
+   <value enum='o' description='SOLD_LAST_SALE' />
+   <value enum='p' description='CANCEL_OPEN' />
+   <value enum='q' description='CANCEL_OPEN_ETH' />
+   <value enum='r' description='OPENED_SALE_ETH' />
+   <value enum='s' description='CANCEL_ONLY' />
+   <value enum='t' description='CANCEL_ONLY_ETH' />
+   <value enum='u' description='LATE_OPEN_ETH' />
+   <value enum='v' description='AUTO_EXECUTION_ETH' />
+   <value enum='w' description='REOPEN' />
+   <value enum='x' description='REOPEN_ETH' />
+   <value enum='y' description='ADJUSTED' />
+   <value enum='z' description='ADJUSTED_ETH' />
+   <value enum='AA' description='SPREAD' />
+   <value enum='AB' description='SPREAD_ETH' />
+   <value enum='AC' description='STRADDLE' />
+   <value enum='AD' description='STRADDLE_ETH' />
+   <value enum='AE' description='STOPPED' />
+   <value enum='AF' description='STOPPED_ETH' />
+   <value enum='AG' description='REGULAR_ETH' />
+   <value enum='AH' description='COMBO' />
+   <value enum='AI' description='COMBO_ETH' />
+   <value enum='AJ' description='OFFICIAL_CLOSING_PRICE' />
+   <value enum='AK' description='PRIOR_REFERENCE_PRICE' />
+   <value enum='AL' description='STOPPED_SOLD_LAST' />
+   <value enum='AM' description='STOPPED_OUT_OF_SEQUENCE' />
+   <value enum='AN' description='OFFICAL_CLOSING_PRICE' />
+   <value enum='AO' description='CROSSED_AO' />
+   <value enum='AP' description='FAST_MARKET' />
+   <value enum='AQ' description='AUTOMATIC_EXECUTION' />
+   <value enum='AR' description='FORM_T' />
+   <value enum='AS' description='BASKET_INDEX' />
+   <value enum='AT' description='BURST_BASKET' />
+   <value enum='1' description='IMPLIED_TRADE' />
+   <value enum='AV' description='OUTSIDE_SPREAD' />
+   <value enum='2' description='MARKETPLACE_ENTERED_TRADE' />
+   <value enum='3' description='MULT_ASSET_CLASS_MULTILEG_TRADE' />
+   <value enum='4' description='MULTILEG_TO_MULTILEG_TRADE' />
+  </field>
   <field number='278' name='MDEntryID' type='STRING' />
   <field number='279' name='MDUpdateAction' type='CHAR'>
    <value enum='0' description='NEW' />
@@ -798,6 +936,14 @@
    <value enum='B' description='UNSUPPORTED_OPENCLOSESETTLEFLAG' />
    <value enum='C' description='UNSUPPORTED_MDIMPLICITDELETE' />
    <value enum='D' description='INSUFFICIENT_CREDIT' />
+  </field>
+  <field number='286' name='OpenCloseSettlFlag' type='MULTIPLECHARVALUE'>
+   <value enum='0' description='DAILY_OPEN' />
+   <value enum='1' description='SESSION_OPEN' />
+   <value enum='2' description='DELIVERY_SETTLEMENT_ENTRY' />
+   <value enum='3' description='EXPECTED_ENTRY' />
+   <value enum='4' description='ENTRY_FROM_PREVIOUS_BUSINESS_DAY' />
+   <value enum='5' description='THEORETICAL_PRICE_VALUE' />
   </field>
   <field number='295' name='NoQuoteEntries' type='NUMINGROUP' />
   <field number='297' name='QuoteStatus' type='INT'>
@@ -874,7 +1020,44 @@
    <value enum='8' description='ALL_SECURITIES' />
    <value enum='9' description='MARKETID_OR_MARKETID_PLUS_MARKETSEGMENTID' />
   </field>
+  <field number='324' name='SecurityStatusReqID' type='STRING' />
   <field number='322' name='SecurityResponseID' type='STRING' />
+  <field number='326' name='SecurityTradingStatus' type='INT'>
+   <value enum='1' description='OPENING_DELAY' />
+   <value enum='10' description='MARKET_ON_CLOSE_IMBALANCE_SELL' />
+   <value enum='11' description='11' />
+   <value enum='12' description='NO_MARKET_IMBALANCE' />
+   <value enum='13' description='NO_MARKET_ON_CLOSE_IMBALANCE' />
+   <value enum='14' description='ITS_PRE_OPENING' />
+   <value enum='15' description='NEW_PRICE_INDICATION' />
+   <value enum='16' description='TRADE_DISSEMINATION_TIME' />
+   <value enum='17' description='READY_TO_TRADE' />
+   <value enum='18' description='NOT_AVAILABLE_FOR_TRADING' />
+   <value enum='19' description='NOT_TRADED_ON_THIS_MARKET' />
+   <value enum='2' description='TRADING_HALT' />
+   <value enum='20' description='UNKNOWN_OR_INVALID' />
+   <value enum='21' description='PRE_OPEN' />
+   <value enum='22' description='OPENING_ROTATION' />
+   <value enum='23' description='FAST_MARKET' />
+   <value enum='3' description='RESUME' />
+   <value enum='4' description='NO_OPEN' />
+   <value enum='5' description='PRICE_INDICATION' />
+   <value enum='6' description='TRADING_RANGE_INDICATION' />
+   <value enum='7' description='MARKET_IMBALANCE_BUY' />
+   <value enum='8' description='MARKET_IMBALANCE_SELL' />
+   <value enum='9' description='MARKET_ON_CLOSE_IMBALANCE_BUY' />
+   <value enum='24' description='PRE_CROSS' />
+   <value enum='25' description='CROSS' />
+   <value enum='26' description='POST_CLOSE' />
+  </field>
+  <field number='336' name='TradingSessionID' type='STRING'>
+   <value enum='1' description='DAY' />
+   <value enum='2' description='HALFDAY' />
+   <value enum='3' description='MORNING' />
+   <value enum='4' description='AFTERNOON' />
+   <value enum='5' description='EVENING' />
+   <value enum='6' description='AFTER_HOURS' />
+  </field>
   <field number='371' name='RefTagID' type='INT' />
   <field number='372' name='RefMsgType' type='STRING'>
    <value enum='0' description='HEARTBEAT' />
@@ -1348,6 +1531,7 @@
   <field number='1003' name='TradeID' type='STRING' />
   <field number='1137' name='DefaultApplVerID' type='STRING' />
   <field number='1166' name='QuoteMsgID' type='STRING' />
+  <field number='1301' name='MarketID' type='EXCHANGE' />
   <field number='1369' name='MassActionReportID' type='STRING' />
   <field number='1724' name='OrderOrigination' type='INT'>
    <value enum='1' description='ORDER_RECEIVED_FROM_A_CUSTOMER' />

@@ -27,6 +27,7 @@ namespace QuickFix
                 {
                     case QuickFix.FIX50SP2.ExecutionReport.MsgType: return new QuickFix.FIX50SP2.ExecutionReport();
                     case QuickFix.FIX50SP2.OrderCancelReject.MsgType: return new QuickFix.FIX50SP2.OrderCancelReject();
+                    case QuickFix.FIX50SP2.News.MsgType: return new QuickFix.FIX50SP2.News();
                     case QuickFix.FIX50SP2.NewOrderSingle.MsgType: return new QuickFix.FIX50SP2.NewOrderSingle();
                     case QuickFix.FIX50SP2.OrderCancelRequest.MsgType: return new QuickFix.FIX50SP2.OrderCancelRequest();
                     case QuickFix.FIX50SP2.OrderCancelReplaceRequest.MsgType: return new QuickFix.FIX50SP2.OrderCancelReplaceRequest();
@@ -38,6 +39,8 @@ namespace QuickFix
                     case QuickFix.FIX50SP2.MarketDataRequestReject.MsgType: return new QuickFix.FIX50SP2.MarketDataRequestReject();
                     case QuickFix.FIX50SP2.QuoteCancel.MsgType: return new QuickFix.FIX50SP2.QuoteCancel();
                     case QuickFix.FIX50SP2.QuoteStatusRequest.MsgType: return new QuickFix.FIX50SP2.QuoteStatusRequest();
+                    case QuickFix.FIX50SP2.SecurityStatus.MsgType: return new QuickFix.FIX50SP2.SecurityStatus();
+                    case QuickFix.FIX50SP2.SecurityStatusRequest.MsgType: return new QuickFix.FIX50SP2.SecurityStatusRequest();
                     case QuickFix.FIX50SP2.BusinessMessageReject.MsgType: return new QuickFix.FIX50SP2.BusinessMessageReject();
                     case QuickFix.FIX50SP2.OrderMassCancelRequest.MsgType: return new QuickFix.FIX50SP2.OrderMassCancelRequest();
                     case QuickFix.FIX50SP2.OrderMassCancelReport.MsgType: return new QuickFix.FIX50SP2.OrderMassCancelReport();
@@ -68,6 +71,15 @@ namespace QuickFix
                     {
                         case QuickFix.Fields.Tags.NoPartyIDs: return new QuickFix.FIX50SP2.OrderCancelReject.NoPartyIDsGroup();
                         case QuickFix.Fields.Tags.NoPartySubIDs: return new QuickFix.FIX50SP2.OrderCancelReject.NoPartyIDsGroup.NoPartySubIDsGroup();
+                    }
+                }
+
+                if (QuickFix.FIX50SP2.News.MsgType.Equals(msgType))
+                {
+                    switch (correspondingFieldID)
+                    {
+                        case QuickFix.Fields.Tags.NoRelatedSym: return new QuickFix.FIX50SP2.News.NoRelatedSymGroup();
+                        case QuickFix.Fields.Tags.NoLinesOfText: return new QuickFix.FIX50SP2.News.NoLinesOfTextGroup();
                     }
                 }
 

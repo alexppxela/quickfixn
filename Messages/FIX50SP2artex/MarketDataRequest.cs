@@ -545,7 +545,7 @@ namespace QuickFix
             }
             public class NoRelatedSymGroup : Group
             {
-                public static int[] fieldOrder = {Tags.Symbol, 0};
+                public static int[] fieldOrder = {Tags.Symbol, Tags.SecurityID, Tags.SecurityIDSource, Tags.Currency, 0};
             
                 public NoRelatedSymGroup() 
                   :base( Tags.NoRelatedSym, Tags.Symbol, fieldOrder)
@@ -589,6 +589,99 @@ namespace QuickFix
                 public bool IsSetSymbol() 
                 { 
                     return IsSetField(Tags.Symbol);
+                }
+                public QuickFix.Fields.SecurityID SecurityID
+                { 
+                    get 
+                    {
+                        QuickFix.Fields.SecurityID val = new QuickFix.Fields.SecurityID();
+                        GetField(val);
+                        return val;
+                    }
+                    set { SetField(value); }
+                }
+                
+                public void Set(QuickFix.Fields.SecurityID val) 
+                { 
+                    this.SecurityID = val;
+                }
+                
+                public QuickFix.Fields.SecurityID Get(QuickFix.Fields.SecurityID val) 
+                { 
+                    GetField(val);
+                    return val;
+                }
+                
+                public bool IsSet(QuickFix.Fields.SecurityID val) 
+                { 
+                    return IsSetSecurityID();
+                }
+                
+                public bool IsSetSecurityID() 
+                { 
+                    return IsSetField(Tags.SecurityID);
+                }
+                public QuickFix.Fields.SecurityIDSource SecurityIDSource
+                { 
+                    get 
+                    {
+                        QuickFix.Fields.SecurityIDSource val = new QuickFix.Fields.SecurityIDSource();
+                        GetField(val);
+                        return val;
+                    }
+                    set { SetField(value); }
+                }
+                
+                public void Set(QuickFix.Fields.SecurityIDSource val) 
+                { 
+                    this.SecurityIDSource = val;
+                }
+                
+                public QuickFix.Fields.SecurityIDSource Get(QuickFix.Fields.SecurityIDSource val) 
+                { 
+                    GetField(val);
+                    return val;
+                }
+                
+                public bool IsSet(QuickFix.Fields.SecurityIDSource val) 
+                { 
+                    return IsSetSecurityIDSource();
+                }
+                
+                public bool IsSetSecurityIDSource() 
+                { 
+                    return IsSetField(Tags.SecurityIDSource);
+                }
+                public QuickFix.Fields.Currency Currency
+                { 
+                    get 
+                    {
+                        QuickFix.Fields.Currency val = new QuickFix.Fields.Currency();
+                        GetField(val);
+                        return val;
+                    }
+                    set { SetField(value); }
+                }
+                
+                public void Set(QuickFix.Fields.Currency val) 
+                { 
+                    this.Currency = val;
+                }
+                
+                public QuickFix.Fields.Currency Get(QuickFix.Fields.Currency val) 
+                { 
+                    GetField(val);
+                    return val;
+                }
+                
+                public bool IsSet(QuickFix.Fields.Currency val) 
+                { 
+                    return IsSetCurrency();
+                }
+                
+                public bool IsSetCurrency() 
+                { 
+                    return IsSetField(Tags.Currency);
                 }
             
             }
